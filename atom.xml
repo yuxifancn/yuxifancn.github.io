@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>范羽西博客</title>
+  <subtitle>范羽西个人博客</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://cn.yuxifan.com/"/>
+  <updated>2017-07-31T08:04:05.652Z</updated>
+  <id>https://cn.yuxifan.com/</id>
+  
+  <author>
+    <name>Yuxi</name>
+    <email>cn@yuxifan.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在Ubuntu 16中配置Python和Steem开发环境</title>
+    <link href="https://cn.yuxifan.com/setup-python-steem-development-environment-ubuntu16/"/>
+    <id>https://cn.yuxifan.com/setup-python-steem-development-environment-ubuntu16/</id>
+    <published>2017-07-30T05:40:12.000Z</published>
+    <updated>2017-07-31T08:04:05.652Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/steemit/piston/ubuntu-python-steem.png" alt="Python/Steem开发环境"></p>
+<h2 id="安装Python-3"><a href="#安装Python-3" class="headerlink" title="安装Python 3"></a>安装Python 3</h2><p>在Ubuntu 16中Python 2和Python 3都是已经默认安装了，只需要更新一下系统，确保升级到最新版本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get -y upgrade</div></pre></td></tr></table></figure>
+<p>验证一下Python版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python -v</div></pre></td></tr></table></figure>
+<p>还需要安装Python中的组件管理工具pip：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install -y python3-pip</div></pre></td></tr></table></figure>
+<p>安装基本的软件开发包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install build-essential libffi-dev libssl-dev python3-dev</div></pre></td></tr></table></figure>
+<h2 id="设定虚拟运行环境"><a href="#设定虚拟运行环境" class="headerlink" title="设定虚拟运行环境"></a>设定虚拟运行环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python3-venv</div><div class="line">mkdir environments</div><div class="line"><span class="built_in">cd</span> environments</div><div class="line">python3 -m venv myenv</div><div class="line"><span class="built_in">source</span> myenv/bin/activate</div></pre></td></tr></table></figure>
+<h2 id="安装进行Steem开发需要的软件库"><a href="#安装进行Steem开发需要的软件库" class="headerlink" title="安装进行Steem开发需要的软件库"></a>安装进行Steem开发需要的软件库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pip3 install wheel </div><div class="line">pip3 install piston-lib</div><div class="line">pip3 install steem</div></pre></td></tr></table></figure>
+<h2 id="测试一下"><a href="#测试一下" class="headerlink" title="测试一下"></a>测试一下</h2><p>下面写了一段小程序，实时输出最新发表文章采用的标签：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> piston <span class="keyword">import</span> Steem</div><div class="line">steem = Steem()</div><div class="line"><span class="keyword">for</span> c <span class="keyword">in</span> steem.stream_comments():</div><div class="line">  <span class="keyword">if</span> c.is_main_post():</div><div class="line">    <span class="keyword">print</span> (c.meta[<span class="string">"tags"</span>])</div></pre></td></tr></table></figure>
+<p><img src="/images/yuxi-steemit.png" alt="Yuxi @ Steemit"></p>
+<p><a href="https://steemit.com" rel="external nofollow noopener noreferrer" target="_blank">https://steemit.com</a> 首发。非常感谢阅读，欢迎FOLLOW和Upvote <a href="https://steemit.com/@yuxi" rel="external nofollow noopener noreferrer" target="_blank">@yuxi</a> 激励我创作更多更好的内容。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/steemit/piston/ubuntu-python-steem.png&quot; alt=&quot;Python/Steem开发环境&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;安装Python-3&quot;&gt;&lt;a href=&quot;#安装Python-3&quot; class=&quot;he
+    
+    </summary>
+    
+      <category term="Steemit" scheme="https://cn.yuxifan.com/categories/Steemit/"/>
+    
+    
+      <category term="Ubuntu" scheme="https://cn.yuxifan.com/tags/Ubuntu/"/>
+    
+      <category term="Python" scheme="https://cn.yuxifan.com/tags/Python/"/>
+    
+      <category term="Steem" scheme="https://cn.yuxifan.com/tags/Steem/"/>
+    
+      <category term="Steemit" scheme="https://cn.yuxifan.com/tags/Steemit/"/>
+    
+  </entry>
+  
+</feed>
