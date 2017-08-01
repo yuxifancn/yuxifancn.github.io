@@ -3,29 +3,32 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Python piston API介绍系列#1 － 账户篇 | 范羽西博客</title>
+    <title>范羽西博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Python,Steem,Steemit">
+        <meta name="keywords" content="">
     
-    <meta name="description" content="在Account这个类中封装了各种账户相关的信息，下面介绍一下如何使用，同时也讨论一下一些重要的指标，比如声望值，投票力等，也许我对用户操作对这些值的影响的理解有偏差，希望各位大佬们多多指点。
-如何使用Account类首先需要配置Python Steem的开发环境，然后只需要导入这个类就可以使用了：
-12from piston.account import Accountaccount = Ac">
+    <meta name="description" content="今天来说说如何获取和帖子相关的信息，最后完成一个很实用的小程序，可以自动发送指定帐号的当日最新文章汇总到你的邮箱，可以设定为一个Cron job，这样就完全自动了。感觉Steem API越来越好玩了呢。。。
+
+另外，根据@oflyhigh的建议，试了一下Steem官方Python API，感觉基本上和之前用的piston-lib一样，只是个别的类会有点不同。
+#  安装官方Python库1pip3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python piston API介绍系列#1 － 账户篇">
-<meta property="og:url" content="https://cn.yuxifan.com/python-steemit-api-account-management/index.html">
+<meta property="og:title" content="范羽西博客">
+<meta property="og:url" content="https://cn.yuxifan.com/python-steem-api-read-post/index.html">
 <meta property="og:site_name" content="范羽西博客">
-<meta property="og:description" content="在Account这个类中封装了各种账户相关的信息，下面介绍一下如何使用，同时也讨论一下一些重要的指标，比如声望值，投票力等，也许我对用户操作对这些值的影响的理解有偏差，希望各位大佬们多多指点。
-如何使用Account类首先需要配置Python Steem的开发环境，然后只需要导入这个类就可以使用了：
-12from piston.account import Accountaccount = Ac">
-<meta property="og:image" content="https://cn.yuxifan.com/images/steemit/python/steem-account.png">
-<meta property="og:updated_time" content="2017-07-31T08:38:13.206Z">
+<meta property="og:description" content="今天来说说如何获取和帖子相关的信息，最后完成一个很实用的小程序，可以自动发送指定帐号的当日最新文章汇总到你的邮箱，可以设定为一个Cron job，这样就完全自动了。感觉Steem API越来越好玩了呢。。。
+
+另外，根据@oflyhigh的建议，试了一下Steem官方Python API，感觉基本上和之前用的piston-lib一样，只是个别的类会有点不同。
+#  安装官方Python库1pip3">
+<meta property="og:image" content="https://cn.yuxifan.com/images/steemit/steemit.png">
+<meta property="og:updated_time" content="2017-08-01T12:57:23.098Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python piston API介绍系列#1 － 账户篇">
-<meta name="twitter:description" content="在Account这个类中封装了各种账户相关的信息，下面介绍一下如何使用，同时也讨论一下一些重要的指标，比如声望值，投票力等，也许我对用户操作对这些值的影响的理解有偏差，希望各位大佬们多多指点。
-如何使用Account类首先需要配置Python Steem的开发环境，然后只需要导入这个类就可以使用了：
-12from piston.account import Accountaccount = Ac">
-<meta name="twitter:image" content="https://cn.yuxifan.com/images/steemit/python/steem-account.png">
+<meta name="twitter:title" content="范羽西博客">
+<meta name="twitter:description" content="今天来说说如何获取和帖子相关的信息，最后完成一个很实用的小程序，可以自动发送指定帐号的当日最新文章汇总到你的邮箱，可以设定为一个Cron job，这样就完全自动了。感觉Steem API越来越好玩了呢。。。
+
+另外，根据@oflyhigh的建议，试了一下Steem官方Python API，感觉基本上和之前用的piston-lib一样，只是个别的类会有点不同。
+#  安装官方Python库1pip3">
+<meta name="twitter:image" content="https://cn.yuxifan.com/images/steemit/steemit.png">
     
 
     
@@ -151,97 +154,50 @@ ga('send', 'pageview');
   
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Steemit/">Steemit</a>
+    未分类
     </h1>
   
 
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-python-steemit-api-account-management" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+                            <article id="post-python-steem-api-read-post" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
-        
-            <header class="article-header">
-                
-    
-        <h1 class="article-title" itemprop="name">
-        Python piston API介绍系列#1 － 账户篇
-        </h1>
-    
-
-            </header>
         
         
             <div class="article-subtitle">
-                <a href="/python-steemit-api-account-management/" class="article-date">
-    <time datetime="2017-07-31T05:40:12.000Z" itemprop="datePublished">2017-07-31</time>
+                <a href="/python-steem-api-read-post/" class="article-date">
+    <time datetime="2017-08-01T12:57:23.098Z" itemprop="datePublished">2017-08-01</time>
 </a>
                 
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Steem/">Steem</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Steemit/">Steemit</a></li></ul>
-
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
 
             
-              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-              <!-- autosize -->
-              <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9869806761757481" data-ad-slot="8827673952" data-ad-format="auto"></ins>
-
-              <script>
-                  (adsbygoogle = window.adsbygoogle || []).push({});
-              </script>
-            
-
-            <p><img src="/images/steemit/python/steem-account.png" alt=""></p>
-<p>在Account这个类中封装了各种账户相关的信息，下面介绍一下如何使用，同时也讨论一下一些重要的指标，比如声望值，投票力等，也许我对用户操作对这些值的影响的理解有偏差，希望各位大佬们多多指点。</p>
-<h2 id="如何使用Account类"><a href="#如何使用Account类" class="headerlink" title="如何使用Account类"></a>如何使用Account类</h2><p>首先需要<a href="/cn/@yuxi/ubuntu-16-python-steem">配置Python Steem的开发环境</a>，然后只需要导入这个类就可以使用了：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> piston.account <span class="keyword">import</span> Account</div><div class="line">account = Account(<span class="string">"yuxi"</span>)</div></pre></td></tr></table></figure>
-<p>至于这个类中有什么属性和方法，可以参考它的<a href="https://github.com/xeroc/piston-lib/blob/master/piston/account.py" rel="external nofollow noopener noreferrer" target="_blank">源代码</a></p>
-<h2 id="获取基本账户信息"><a href="#获取基本账户信息" class="headerlink" title="获取基本账户信息"></a>获取基本账户信息</h2><p>接下来就可以查看各种相关的账户信息了，比如：</p>
-<p>获取用户名：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"Name: %s"</span> % account.name)</div></pre></td></tr></table></figure>
-<p>打印用户的profile，比如：用户名，自我介绍等。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"Profile: %s"</span> % account.profile)</div></pre></td></tr></table></figure>
-<p>查看余额:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"Balances: %s"</span> % account.balances)</div></pre></td></tr></table></figure>
-<p>查看用户最近Upvote的帖子：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"Account votes: %s"</span> % account.get_account_votes())</div></pre></td></tr></table></figure>
-<p>这个指标里面有个weight，这个应该是和Steem Power有关的，值最大，投的票就越起作用，作者获得的奖励就越多。看了一下abit大神的投票，这个weight的值大的＊吓＊死＊人＊了＊</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;'weight': 3590608, 'time': '2017-07-28T07:58:42', 'rshares': '35476665753831', 'authorperm': 'deanliu/steem-oh-the-eagle-flies-high', 'percent': 5000&#125;, </div><div class="line">&#123;'weight': 3350775, 'time': '2017-07-28T08:20:09', 'rshares': '17942256119450', 'authorperm': 'lingfei/5r552t', 'percent': 2500&#125;,</div><div class="line"> &#123;'weight': 4038783, 'time': '2017-07-28T11:04:48', 'rshares': '49749730726633', 'authorperm': 'rea/a-queen-for-the-weekend-in-the-scottish-highlands-part-iii', 'percent': 7000&#125;,</div><div class="line"> &#123;'weight': 5215056, 'time': '2017-07-28T12:03:54', 'rshares': '45672133202030', 'authorperm': 'someone/london---travel-with-me-6----susan-6-by-susanlo', 'percent': 6500&#125;</div></pre></td></tr></table></figure>
-<h2 id="关于关注和粉丝"><a href="#关于关注和粉丝" class="headerlink" title="关于关注和粉丝"></a>关于关注和粉丝</h2><p>看看你的粉丝还有你都关注了谁</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">followers = account.get_followers()</div><div class="line">following = account.get_following()</div><div class="line">print(<span class="string">"Followers: %s"</span> % followers)</div><div class="line">print(<span class="string">"Following: %s"</span> % following)</div></pre></td></tr></table></figure>
-<p>还可以利用Python的集合操作看看谁和你互粉了：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"Dual following: %s"</span> % list(set(followers).intersection(set(following))))</div></pre></td></tr></table></figure>
-<h2 id="关于投票力"><a href="#关于投票力" class="headerlink" title="关于投票力"></a>关于投票力</h2><p>显示当前用户的投票力：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"Voting power: %s"</span> % account.voting_power())</div></pre></td></tr></table></figure>
-<p>系统显示出我的投票力是:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Voting power: <span class="number">49.47</span></div></pre></td></tr></table></figure>
-<p>我接着做了一个实验，给一哥@myfirst<a href="https://steemit.com/cn/@myfirst/6qowwz-steemit" rel="external nofollow noopener noreferrer" target="_blank">这个帖子</a>投了一票，结果我的投票力涨了：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Voting power: 62.32</div></pre></td></tr></table></figure>
-<p>一哥的<a href="https://steemit.com/steemit/@myfirst/5byn2r-hi-morning" rel="external nofollow noopener noreferrer" target="_blank">这个帖子</a>写的也不错，再投一票。查看下投票力，竟然降了降了降了，我直接蒙圈了。。。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Voting power: 61.19</div></pre></td></tr></table></figure>
-<p>再给O大神的<a href="https://steemit.com/photography/@oflyhigh/5mgvjb" rel="external nofollow noopener noreferrer" target="_blank">这个帖子</a>投了一票，投票力继续下降。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Voting power: 59.98</div></pre></td></tr></table></figure>
-<p>问题来了：为什么第一次给一哥投票时投票力会涨，随后会一直降？Steem用户在投票的时候需要注意什么？</p>
-<h2 id="关于声望值"><a href="#关于声望值" class="headerlink" title="关于声望值"></a>关于声望值</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"Reputation: %s"</span> % account.rep)</div></pre></td></tr></table></figure>
-<p>这个声望值和你的Steem Power没有关系，和你在Steem中的行为有关，比如：发帖质量，参与讨论等有关。</p>
-<p>先说到这里，欢迎大家批评指正。</p>
+            <p>今天来说说如何获取和帖子相关的信息，最后完成一个很实用的小程序，可以自动发送指定帐号的当日最新文章汇总到你的邮箱，可以设定为一个Cron job，这样就完全自动了。感觉Steem API越来越好玩了呢。。。</p>
+<p><img src="/images/steemit/steemit.png" alt=""></p>
+<p>另外，根据@oflyhigh的建议，试了一下<a href="https://github.com/steemit/steem-python" rel="external nofollow noopener noreferrer" target="_blank">Steem官方Python API</a>，感觉基本上和之前用的piston-lib一样，只是个别的类会有点不同。</p>
+<h1 id="安装官方Python库"><a href="#安装官方Python库" class="headerlink" title="#  安装官方Python库"></a>#  安装官方Python库</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip3 install -U steem</div></pre></td></tr></table></figure>
+<h1 id="读取用户发帖信息"><a href="#读取用户发帖信息" class="headerlink" title="#  读取用户发帖信息"></a>#  读取用户发帖信息</h1><p>这里主要用到了<a href="https://github.com/steemit/steem-python/blob/master/steem/blog.py" rel="external nofollow noopener noreferrer" target="_blank">Blog</a>和<a href="https://github.com/steemit/steem-python/blob/master/steem/post.py" rel="external nofollow noopener noreferrer" target="_blank">Post</a>两个类。详细的方法列表请参考github上的源文件和官方文档。</p>
+<p>首先，导入对应的Blog类：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> steem.blog <span class="keyword">import</span> Blog</div><div class="line">blog = Blog(<span class="string">"yuxi"</span>)</div></pre></td></tr></table></figure>
+<p>读取最新的两篇文章：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print( blog.take(<span class="number">2</span>) )</div></pre></td></tr></table></figure>
+<p>读取文章相关的信息，比如：标题，创建时间，文章链接地址，文章分类，标签，获得的upvote数量，获得奖励／预计奖励等等</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> p <span class="keyword">in</span> blog.take(<span class="number">3</span>):</div><div class="line">  print(<span class="string">"created: %s"</span>    % p[<span class="string">'created'</span>])</div><div class="line">  print(<span class="string">"permlink: %s"</span>   % p[<span class="string">'permlink'</span>])</div><div class="line">  print(<span class="string">"comments: %s"</span>   % str(len(list(p.get_replies()))))</div><div class="line">  print(<span class="string">"url: %s"</span>        % p[<span class="string">'url'</span>])</div><div class="line">  print(<span class="string">"categories: %s"</span> % str(p[<span class="string">'category'</span>]))</div><div class="line">  print(<span class="string">"tags: %s"</span>       % str(p[<span class="string">'tags'</span>]))</div><div class="line">  print(<span class="string">"votes: %s"</span>      % str(p[<span class="string">'net_votes'</span>]))</div><div class="line">  print(<span class="string">"reward: %s"</span>     % str(p[<span class="string">'total_payout_value'</span>] + p[<span class="string">'pending_payout_value'</span>]))</div><div class="line">  print()</div></pre></td></tr></table></figure>
+<h2 id="获取某个用户的评论信息"><a href="#获取某个用户的评论信息" class="headerlink" title="获取某个用户的评论信息"></a>获取某个用户的评论信息</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">comments = Blog(<span class="string">"yuxi"</span>, <span class="keyword">True</span>)</div><div class="line"><span class="keyword">print</span> (comments.take(<span class="number">2</span>))</div></pre></td></tr></table></figure>
+<h2 id="自动发送感兴趣用户的当日最新帖子到指定邮箱"><a href="#自动发送感兴趣用户的当日最新帖子到指定邮箱" class="headerlink" title="自动发送感兴趣用户的当日最新帖子到指定邮箱"></a>自动发送感兴趣用户的当日最新帖子到指定邮箱</h2><p>其实有了上面的Blog和Post类，玩法就很多了，比如：可以让程序自动搜集指定用户的特定文章，再生成RSS feed放到一个web服务器上，这样就可以在RSS阅读器中阅读了，当然也可以设定一个Cron job，每天自动发送一条感兴趣文章的汇总。更多的玩法欢迎大家大开脑洞，在下面留言。</p>
+<p>下面实现一下自动发送感兴趣作者的当日最新文章到指定邮箱，这里只列举了 @myfirst,  @oflyhigh, @tumutanzi三位的每日文章。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> smtplib</div><div class="line"><span class="keyword">from</span> email.mime.text <span class="keyword">import</span> MIMEText</div><div class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</div><div class="line"><span class="keyword">from</span> steem.blog <span class="keyword">import</span> Blog</div><div class="line"></div><div class="line">users  = [<span class="string">"myfirst"</span>,<span class="string">"oflyhigh"</span>,”tumutanzi”]</div><div class="line"></div><div class="line"><span class="comment"># 只检查最新3篇文章，再多了我就怀疑文章的质量了，当然也许有大牛能每天创作更多文章</span></div><div class="line">number_of_posts_to_check = <span class="number">3</span></div><div class="line"></div><div class="line">host   = <span class="string">'https://steemit.com'</span></div><div class="line"></div><div class="line">content = <span class="string">''</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> user <span class="keyword">in</span> users:</div><div class="line">  content += <span class="string">'From '</span>  + user + <span class="string">'&lt;br/&gt;'</span></div><div class="line">  content += <span class="string">'------------------&lt;br/&gt;'</span></div><div class="line">  posts = Blog(user)</div><div class="line">  <span class="keyword">for</span> p <span class="keyword">in</span> posts.take(number_of_posts_to_check):</div><div class="line">    p_date = p[<span class="string">'created'</span>]</div><div class="line">    today = datetime.today().date()</div><div class="line">    created_today = (p_date.date()==today)</div><div class="line"></div><div class="line">    <span class="keyword">if</span> created_today == <span class="keyword">True</span>:</div><div class="line">      content += <span class="string">'&lt;a href="'</span> + host+p[<span class="string">'url'</span>]+<span class="string">'"&gt;'</span> + p[<span class="string">'title'</span>] + <span class="string">"&lt;/a&gt;&lt;br/&gt;"</span></div><div class="line">      content +=  <span class="string">' Category: '</span> + str(p[<span class="string">'category'</span>]) + <span class="string">"&lt;br/&gt;"</span></div><div class="line">      content +=  <span class="string">' Tags: '</span> + str(p[<span class="string">'tags'</span>]) + <span class="string">"&lt;br/&gt;"</span></div><div class="line">      content +=  <span class="string">' Votes: '</span> + str(p[<span class="string">'net_votes'</span>]) + <span class="string">"&lt;br/&gt;"</span></div><div class="line">      content +=  <span class="string">' Comments: '</span> + str(len(list(p.get_replies()))) + <span class="string">"&lt;br/&gt;"</span></div><div class="line">      content +=  <span class="string">' Rewards: '</span> + str(p[<span class="string">'total_payout_value'</span>] + p[<span class="string">'pending_payout_value'</span>]) + <span class="string">"&lt;br/&gt;"</span></div><div class="line">      content +=  <span class="string">'&lt;br/&gt;'</span></div><div class="line"></div><div class="line">  content +=  <span class="string">'&lt;br/&gt;'</span></div><div class="line"></div><div class="line">fromaddr = <span class="string">'你的Gmail邮箱'</span></div><div class="line">toaddrs  = <span class="string">'你的接收邮箱'</span></div><div class="line">subject = <span class="string">'Daily posts: '</span> + datetime.today().strftime(<span class="string">'%Y-%m-%d'</span>)</div><div class="line">message = MIMEText(content.encode(<span class="string">'utf-8'</span>), _subtype=<span class="string">'html'</span>, _charset=<span class="string">'utf-8'</span>)</div><div class="line">message[<span class="string">'Subject'</span>] = subject</div><div class="line"></div><div class="line">username = <span class="string">'XXXXXXXX'</span></div><div class="line">password = <span class="string">'XXXXX'</span></div><div class="line">server = smtplib.SMTP(<span class="string">'smtp.gmail.com:587'</span>)</div><div class="line">server.ehlo()</div><div class="line">server.starttls()</div><div class="line">server.login(username,password)</div><div class="line">server.sendmail(fromaddr, toaddrs, message.as_string())</div><div class="line">server.quit()</div></pre></td></tr></table></figure>
+<p>这是我收到的email: </p>
+<p><img src="/images/steemit/python/email-received.png" alt=""></p>
 <p><img src="/images/yuxi-steemit.png" alt="Yuxi @ Steemit"></p>
 <p><a href="https://steemit.com" rel="external nofollow noopener noreferrer" target="_blank">https://steemit.com</a> 首发。非常感谢阅读，欢迎FOLLOW和Upvote <a href="https://steemit.com/@yuxi" rel="external nofollow noopener noreferrer" target="_blank">@yuxi</a> 激励我创作更多更好的内容。</p>
 
 
-            
-              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-              <!-- autosize -->
-              <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9869806761757481" data-ad-slot="8827673952" data-ad-format="auto"></ins>
-
-              <script>
-                  (adsbygoogle = window.adsbygoogle || []).push({});
-              </script>
             
 
         </div>
@@ -250,7 +206,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://cn.yuxifan.com/python-steemit-api-account-management/" data-id="cj5s8yxbx0000bcxut2g69np8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://cn.yuxifan.com/python-steem-api-read-post/" data-id="cj5tl9pdk0000d9xuej93a9tm" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -532,7 +488,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'yuxifan';
     
     
-    var disqus_url = 'https://cn.yuxifan.com/python-steemit-api-account-management/';
+    var disqus_url = 'https://cn.yuxifan.com/python-steem-api-read-post/';
     
     (function() {
     var dsq = document.createElement('script');
