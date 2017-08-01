@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cn.yuxifan.com/"/>
-  <updated>2017-08-01T12:57:23.098Z</updated>
+  <updated>2017-08-01T13:05:25.750Z</updated>
   <id>https://cn.yuxifan.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>Python Steem API介绍系列#2 － 帖子读取篇</title>
     <link href="https://cn.yuxifan.com/python-steem-api-read-post/"/>
     <id>https://cn.yuxifan.com/python-steem-api-read-post/</id>
-    <published>2017-08-01T12:57:23.098Z</published>
-    <updated>2017-08-01T12:57:23.098Z</updated>
+    <published>2017-08-01T19:00:12.000Z</published>
+    <updated>2017-08-01T13:05:25.750Z</updated>
     
     <content type="html"><![CDATA[<p>今天来说说如何获取和帖子相关的信息，最后完成一个很实用的小程序，可以自动发送指定帐号的当日最新文章汇总到你的邮箱，可以设定为一个Cron job，这样就完全自动了。感觉Steem API越来越好玩了呢。。。</p>
 <p><img src="/images/steemit/steemit.png" alt=""></p>
@@ -50,6 +50,14 @@
     
     </summary>
     
+      <category term="Steemit" scheme="https://cn.yuxifan.com/categories/Steemit/"/>
+    
+    
+      <category term="Python" scheme="https://cn.yuxifan.com/tags/Python/"/>
+    
+      <category term="Steem" scheme="https://cn.yuxifan.com/tags/Steem/"/>
+    
+      <category term="Steemit" scheme="https://cn.yuxifan.com/tags/Steemit/"/>
     
   </entry>
   
