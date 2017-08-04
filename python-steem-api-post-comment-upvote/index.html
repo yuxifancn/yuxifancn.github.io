@@ -3,18 +3,29 @@
 <head>
     <meta charset="utf-8">
     
-    <title>范羽西博客</title>
+    <title>Python Steem API介绍系列#3 - 发帖回复点赞篇 | 范羽西博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="分享羽西的技术文章，游记等等">
-<meta property="og:type" content="website">
-<meta property="og:title" content="范羽西博客">
-<meta property="og:url" content="https://cn.yuxifan.com/index.html">
+        <meta name="keywords" content="Python,Steem,Steemit">
+    
+    <meta name="description" content="下面来说说如何使用Python Steem API进行发帖，留言，以及给帖子点赞。
+首先，和前面介绍的读取账户信息和读取已发帖子信息不同的是，这里必须要进行验证才能进行发帖等操作。
+首先找到你的WIF登陆你的Steemit账户后，点”Wallet” -&amp;gt; “Permissions”，你会看到”POSTING”下面对应了一串很长的密码，不是这个，再点下”SHOW PRIVATE KEY”，你">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Steem API介绍系列#3 - 发帖回复点赞篇">
+<meta property="og:url" content="https://cn.yuxifan.com/python-steem-api-post-comment-upvote/index.html">
 <meta property="og:site_name" content="范羽西博客">
-<meta property="og:description" content="分享羽西的技术文章，游记等等">
+<meta property="og:description" content="下面来说说如何使用Python Steem API进行发帖，留言，以及给帖子点赞。
+首先，和前面介绍的读取账户信息和读取已发帖子信息不同的是，这里必须要进行验证才能进行发帖等操作。
+首先找到你的WIF登陆你的Steemit账户后，点”Wallet” -&amp;gt; “Permissions”，你会看到”POSTING”下面对应了一串很长的密码，不是这个，再点下”SHOW PRIVATE KEY”，你">
+<meta property="og:image" content="https://cn.yuxifan.com/images/steemit/python/steem-upvote.png">
+<meta property="og:updated_time" content="2017-08-04T12:34:36.678Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="范羽西博客">
-<meta name="twitter:description" content="分享羽西的技术文章，游记等等">
+<meta name="twitter:title" content="Python Steem API介绍系列#3 - 发帖回复点赞篇">
+<meta name="twitter:description" content="下面来说说如何使用Python Steem API进行发帖，留言，以及给帖子点赞。
+首先，和前面介绍的读取账户信息和读取已发帖子信息不同的是，这里必须要进行验证才能进行发帖等操作。
+首先找到你的WIF登陆你的Steemit账户后，点”Wallet” -&amp;gt; “Permissions”，你会看到”POSTING”下面对应了一串很长的密码，不是这个，再点下”SHOW PRIVATE KEY”，你">
+<meta name="twitter:image" content="https://cn.yuxifan.com/images/steemit/python/steem-upvote.png">
     
 
     
@@ -138,232 +149,162 @@ ga('send', 'pageview');
                         <div class="main-body-header">
 
   
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Steemit/">Steemit</a>
+    </h1>
+  
 
 </div>
 
                         <div class="main-body-content">
-                            
-  
-  
-    
-      <section class="archives-wrap">
-
-      <div class="archive-year-wrap">
-        <p class="article-title" style="font-size: 20px;">Steemit</p>
-      </div>
-
-      <div class="archives">
+                            <article id="post-python-steem-api-post-comment-upvote" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
         
-        
-          
-          
-            <div class="article-row">
-          
-            <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/python-steem-api-post-comment-upvote/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/steemit/python/steem-upvote.png)" alt="Python Steem API介绍系列#3 - 发帖回复点赞篇" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://cn.yuxifan.com/python-steem-api-post-comment-upvote/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/python-steem-api-post-comment-upvote/">Python Steem API介绍系列#3 - 发帖回复点赞篇</a>
+        Python Steem API介绍系列#3 - 发帖回复点赞篇
         </h1>
     
 
-        <p class="article-excerpt">
-            
-下面来说说如何使用Python Steem API进行发帖，留言，以及给帖子点赞。
-首先，和前面介绍的读取账户信息和读取已发帖子信息不同的是，这里必须要进行验证才能进行发帖等操作。
-首先找到你的WIF登陆你的Steemit账户后，点”Wallet” -&gt; “Permissions”，你会看到”POSTING”下面对应了一串很长的密码，不是这个，再点下”SHOW PRIVATE KEY”，你
-        </p>
-    </div>
-</article>
-
-
-          
+            </header>
         
-          
-          
-            <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <a href="/python-steem-api-read-post/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/steemit/steemit.png)" alt="Python Steem API介绍系列#2 － 帖子读取篇" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://cn.yuxifan.com/python-steem-api-read-post/">0</span>
-    
-</span>
-
-    
+            <div class="article-subtitle">
+                <a href="/python-steem-api-post-comment-upvote/" class="article-date">
+    <time datetime="2017-08-04T19:00:12.000Z" itemprop="datePublished">2017-08-04</time>
 </a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Steem/">Steem</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Steemit/">Steemit</a></li></ul>
 
-        
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/python-steem-api-read-post/">Python Steem API介绍系列#2 － 帖子读取篇</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            今天来说说如何获取和帖子相关的信息，最后完成一个很实用的小程序，可以自动发送指定帐号的当日最新文章汇总到你的邮箱，可以设定为一个Cron job，这样就完全自动了。感觉Steem API越来越好玩了呢。。。
-
-另外，根据@oflyhigh的建议，试了一下Steem官方Python API，感觉基本上和之前用的piston-lib一样，只是个别的类会有点不同。
-#  安装官方Python库1pip3
-        </p>
-    </div>
-</article>
-
-
-          
             </div>
-          
         
-          
-          
-            <div class="article-row">
-          
-            <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <a href="/python-steemit-api-account-management/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/steemit/python/steem-account.png)" alt="Python piston API介绍系列#1 － 账户篇" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://cn.yuxifan.com/python-steemit-api-account-management/">0</span>
-    
-</span>
+        <div class="article-entry" itemprop="articleBody">
 
-    
-</a>
-
-        
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/python-steemit-api-account-management/">Python piston API介绍系列#1 － 账户篇</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
             
-在Account这个类中封装了各种账户相关的信息，下面介绍一下如何使用，同时也讨论一下一些重要的指标，比如声望值，投票力等，也许我对用户操作对这些值的影响的理解有偏差，希望各位大佬们多多指点。
-如何使用Account类首先需要配置Python Steem的开发环境，然后只需要导入这个类就可以使用了：
-12from piston.account import Accountaccount = Ac
-        </p>
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+              <!-- autosize -->
+              <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9869806761757481" data-ad-slot="8827673952" data-ad-format="auto"></ins>
+
+              <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            
+
+            <p><img src="/images/steemit/python/steem-upvote.png" alt=""></p>
+<p>下面来说说如何使用Python Steem API进行发帖，留言，以及给帖子点赞。</p>
+<p>首先，和前面介绍的读取账户信息和读取已发帖子信息不同的是，这里必须要进行验证才能进行发帖等操作。</p>
+<h2 id="首先找到你的WIF"><a href="#首先找到你的WIF" class="headerlink" title="首先找到你的WIF"></a>首先找到你的WIF</h2><p>登陆你的Steemit账户后，点”Wallet” -&gt; “Permissions”，你会看到”POSTING”下面对应了一串很长的密码，不是这个，再点下”SHOW PRIVATE KEY”，你会看到一个数字5开头的密码，这就是下面操作需要的密码了。下面的发帖，留言以及Upvote等操作只需要这个POSTING密码就够了。</p>
+<p><img src="/images/steemit/python/wif.png" alt=""></p>
+<h2 id="创建Steem类对象"><a href="#创建Steem类对象" class="headerlink" title="创建Steem类对象"></a>创建Steem类对象</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> steem <span class="keyword">import</span> Steem</div><div class="line"></div><div class="line">wif = &#123;</div><div class="line">    <span class="string">"posting"</span>: <span class="string">"复制你刚才看到的密码到这里"</span></div><div class="line">&#125;</div><div class="line">steem = Steem(keys=wif)</div></pre></td></tr></table></figure>
+<h2 id="发个测试帖子"><a href="#发个测试帖子" class="headerlink" title="发个测试帖子"></a>发个测试帖子</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">p = steem.post(<span class="string">"python API test"</span>, <span class="string">"test posting"</span>, author=<span class="string">'yuxi'</span>, tags=<span class="string">"test"</span>)</div><div class="line"><span class="keyword">print</span> (p)</div></pre></td></tr></table></figure>
+<p>这里需要注意帖子不要乱发喔，建议只发送到测试标签”test”下，否则可能会被大鲸踩喔。。。</p>
+<h2 id="测试一下回复功能"><a href="#测试一下回复功能" class="headerlink" title="测试一下回复功能"></a>测试一下回复功能</h2><p>其实在Steem中，回复也是一个帖子，只不过比较特殊而已，回复没有标题。因此在进行回复的时候，也是用的post这个方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">p = steem.post(title=<span class="string">''</span>, body=<span class="string">'test commenting'</span>, author=<span class="string">'yuxi'</span>, reply_identifier=<span class="string">'@yuxi/python-api-test'</span>)</div></pre></td></tr></table></figure>
+<p>这是测试完发帖和回复后的屏幕截图：<br><img src="/images/steemit/python/post-comment-screenshot.png" alt=""></p>
+<h2 id="测试一下顶帖Upvote功能"><a href="#测试一下顶帖Upvote功能" class="headerlink" title="测试一下顶帖Upvote功能"></a>测试一下顶帖Upvote功能</h2><p>正好今天看到 @peterchen145 这篇文章不错，省了我手工顶了，直接在程序中实现：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">steem.vote(<span class="string">'@peterchen145/yoyow-pressone'</span>, <span class="number">100.00</span>, <span class="string">'yuxi'</span>)</div></pre></td></tr></table></figure>
+<p>当然你也可以撤销顶帖，把那个100.00换成负数，比如：-100.00，就会撤消你刚顶过的帖子。</p>
+<h2 id="关于这些API使用的一些想法"><a href="#关于这些API使用的一些想法" class="headerlink" title="关于这些API使用的一些想法"></a>关于这些API使用的一些想法</h2><p>除了上面介绍的三种功能之外，还有很多有意思的操作，比如：设定留言的回复功能，感觉可以通过这些API实现一个类似微信公共平台的自动回复功能。如果把这些功能组合起来，很容易写出一个自动顶帖，回复，甚至发帖的机器人来。</p>
+<p>但是，任何好的技术都是双刃剑，关键看你是怎样来使用。我非常赞同 @tumutanzi 在一篇文章中所说的，要用心来写作，再高级的机器人也只能是冷冰冰的机器人，也许它永远无法懂得怎样去融入一个由一个个活生生的人组成的Steemit社区。</p>
+<p><img src="/images/yuxi-steemit.png" alt="Yuxi @ Steemit"></p>
+<p><a href="https://steemit.com" rel="external nofollow noopener noreferrer" target="_blank">https://steemit.com</a> 首发。非常感谢阅读，欢迎FOLLOW和Upvote <a href="https://steemit.com/@yuxi" rel="external nofollow noopener noreferrer" target="_blank">@yuxi</a> 激励我创作更多更好的内容。</p>
+
+
+            
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+              <!-- autosize -->
+              <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9869806761757481" data-ad-slot="8827673952" data-ad-format="auto"></ins>
+
+              <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://cn.yuxifan.com/python-steem-api-post-comment-upvote/" data-id="cj5xurps70000jrxuq1u7alfd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
 
-
-          
-        
-          
-          
-            <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/setup-python-steem-development-environment-ubuntu16/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/steemit/piston/ubuntu-python-steem.png)" alt="在Ubuntu 16中配置Python和Steem开发环境" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://cn.yuxifan.com/setup-python-steem-development-environment-ubuntu16/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/setup-python-steem-development-environment-ubuntu16/">在Ubuntu 16中配置Python和Steem开发环境</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-安装Python 3在Ubuntu 16中Python 2和Python 3都是已经默认安装了，只需要更新一下系统，确保升级到最新版本：
-12sudo apt-get updatesudo apt-get -y upgrade
-验证一下Python版本
-1python -v
-还需要安装Python中的组件管理工具pip：
-1sudo apt-get install -y python3-pip
-
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
 
-
-          
-            </div>
-          
-        
-      </div>
-
+    
     </section>
-    
-  
-     
-  
-  
-    
-  
-     
-  
-  
-    
-  
-     
-  
-  
-    
-  
-     
-  
-  
-    
-  
-     
-  
-
-
 
 
                         </div>
@@ -593,11 +534,13 @@ ga('send', 'pageview');
     var disqus_shortname = 'yuxifan';
     
     
+    var disqus_url = 'https://cn.yuxifan.com/python-steem-api-post-comment-upvote/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>

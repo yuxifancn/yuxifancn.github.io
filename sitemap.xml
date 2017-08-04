@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://cn.yuxifan.com/python-steem-api-post-comment-upvote/</loc>
+    
+    <lastmod>2017-08-04T12:34:36.678Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://cn.yuxifan.com/python-steem-api-read-post/</loc>
     
     <lastmod>2017-08-01T13:05:25.750Z</lastmod>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cn.yuxifan.com/"/>
-  <updated>2017-08-01T13:05:25.750Z</updated>
+  <updated>2017-08-04T12:34:36.678Z</updated>
   <id>https://cn.yuxifan.com/</id>
   
   <author>
@@ -14,6 +14,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python Steem API介绍系列#3 - 发帖回复点赞篇</title>
+    <link href="https://cn.yuxifan.com/python-steem-api-post-comment-upvote/"/>
+    <id>https://cn.yuxifan.com/python-steem-api-post-comment-upvote/</id>
+    <published>2017-08-04T19:00:12.000Z</published>
+    <updated>2017-08-04T12:34:36.678Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/steemit/python/steem-upvote.png" alt=""></p>
+<p>下面来说说如何使用Python Steem API进行发帖，留言，以及给帖子点赞。</p>
+<p>首先，和前面介绍的读取账户信息和读取已发帖子信息不同的是，这里必须要进行验证才能进行发帖等操作。</p>
+<h2 id="首先找到你的WIF"><a href="#首先找到你的WIF" class="headerlink" title="首先找到你的WIF"></a>首先找到你的WIF</h2><p>登陆你的Steemit账户后，点”Wallet” -&gt; “Permissions”，你会看到”POSTING”下面对应了一串很长的密码，不是这个，再点下”SHOW PRIVATE KEY”，你会看到一个数字5开头的密码，这就是下面操作需要的密码了。下面的发帖，留言以及Upvote等操作只需要这个POSTING密码就够了。</p>
+<p><img src="/images/steemit/python/wif.png" alt=""></p>
+<h2 id="创建Steem类对象"><a href="#创建Steem类对象" class="headerlink" title="创建Steem类对象"></a>创建Steem类对象</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> steem <span class="keyword">import</span> Steem</div><div class="line"></div><div class="line">wif = &#123;</div><div class="line">    <span class="string">"posting"</span>: <span class="string">"复制你刚才看到的密码到这里"</span></div><div class="line">&#125;</div><div class="line">steem = Steem(keys=wif)</div></pre></td></tr></table></figure>
+<h2 id="发个测试帖子"><a href="#发个测试帖子" class="headerlink" title="发个测试帖子"></a>发个测试帖子</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">p = steem.post(<span class="string">"python API test"</span>, <span class="string">"test posting"</span>, author=<span class="string">'yuxi'</span>, tags=<span class="string">"test"</span>)</div><div class="line"><span class="keyword">print</span> (p)</div></pre></td></tr></table></figure>
+<p>这里需要注意帖子不要乱发喔，建议只发送到测试标签”test”下，否则可能会被大鲸踩喔。。。</p>
+<h2 id="测试一下回复功能"><a href="#测试一下回复功能" class="headerlink" title="测试一下回复功能"></a>测试一下回复功能</h2><p>其实在Steem中，回复也是一个帖子，只不过比较特殊而已，回复没有标题。因此在进行回复的时候，也是用的post这个方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">p = steem.post(title=<span class="string">''</span>, body=<span class="string">'test commenting'</span>, author=<span class="string">'yuxi'</span>, reply_identifier=<span class="string">'@yuxi/python-api-test'</span>)</div></pre></td></tr></table></figure>
+<p>这是测试完发帖和回复后的屏幕截图：<br><img src="/images/steemit/python/post-comment-screenshot.png" alt=""></p>
+<h2 id="测试一下顶帖Upvote功能"><a href="#测试一下顶帖Upvote功能" class="headerlink" title="测试一下顶帖Upvote功能"></a>测试一下顶帖Upvote功能</h2><p>正好今天看到 @peterchen145 这篇文章不错，省了我手工顶了，直接在程序中实现：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">steem.vote(<span class="string">'@peterchen145/yoyow-pressone'</span>, <span class="number">100.00</span>, <span class="string">'yuxi'</span>)</div></pre></td></tr></table></figure>
+<p>当然你也可以撤销顶帖，把那个100.00换成负数，比如：-100.00，就会撤消你刚顶过的帖子。</p>
+<h2 id="关于这些API使用的一些想法"><a href="#关于这些API使用的一些想法" class="headerlink" title="关于这些API使用的一些想法"></a>关于这些API使用的一些想法</h2><p>除了上面介绍的三种功能之外，还有很多有意思的操作，比如：设定留言的回复功能，感觉可以通过这些API实现一个类似微信公共平台的自动回复功能。如果把这些功能组合起来，很容易写出一个自动顶帖，回复，甚至发帖的机器人来。</p>
+<p>但是，任何好的技术都是双刃剑，关键看你是怎样来使用。我非常赞同 @tumutanzi 在一篇文章中所说的，要用心来写作，再高级的机器人也只能是冷冰冰的机器人，也许它永远无法懂得怎样去融入一个由一个个活生生的人组成的Steemit社区。</p>
+<p><img src="/images/yuxi-steemit.png" alt="Yuxi @ Steemit"></p>
+<p><a href="https://steemit.com" rel="external nofollow noopener noreferrer" target="_blank">https://steemit.com</a> 首发。非常感谢阅读，欢迎FOLLOW和Upvote <a href="https://steemit.com/@yuxi" rel="external nofollow noopener noreferrer" target="_blank">@yuxi</a> 激励我创作更多更好的内容。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/steemit/python/steem-upvote.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;下面来说说如何使用Python Steem API进行发帖，留言，以及给帖子点赞。&lt;/p&gt;
+&lt;p&gt;首先，和前面介绍的读取账户信息和读取已发帖子
+    
+    </summary>
+    
+      <category term="Steemit" scheme="https://cn.yuxifan.com/categories/Steemit/"/>
+    
+    
+      <category term="Python" scheme="https://cn.yuxifan.com/tags/Python/"/>
+    
+      <category term="Steem" scheme="https://cn.yuxifan.com/tags/Steem/"/>
+    
+      <category term="Steemit" scheme="https://cn.yuxifan.com/tags/Steemit/"/>
+    
+  </entry>
   
   <entry>
     <title>Python Steem API介绍系列#2 － 帖子读取篇</title>

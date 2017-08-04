@@ -7,12 +7,12 @@ a[rel^="external"]:after {
   text-decoration: none;
   padding-left: 3px;
 }
-a[href^="http://www.yuxifan.com"]:after,
+a[href^="http://cn.yuxifan.com"]:after,
 a.no_icon:after {
   content: "" !important;
   padding-left: 0;
 }
-a[href^="https://www.yuxifan.com"]:after,
+a[href^="https://cn.yuxifan.com"]:after,
 a.no_icon:after {
   content: "" !important;
   padding-left: 0;
