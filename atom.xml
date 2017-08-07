@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cn.yuxifan.com/"/>
-  <updated>2017-08-04T12:34:36.678Z</updated>
+  <updated>2017-08-07T12:51:23.900Z</updated>
   <id>https://cn.yuxifan.com/</id>
   
   <author>
@@ -14,6 +14,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://cn.yuxifan.com/python-steem-api-transfers/"/>
+    <id>https://cn.yuxifan.com/python-steem-api-transfers/</id>
+    <published>2017-08-07T12:51:23.900Z</published>
+    <updated>2017-08-07T12:51:23.900Z</updated>
+    
+    <content type="html"><![CDATA[<p>Python Steem API介绍系列#4 - 转账操作篇</p>
+<hr>
+<p>author: 羽西<br>title: Python Steem API介绍系列#4 - 转账操作篇<br>category: Steemit<br>googleads: true<br>googleads_top: true<br>keywords: Python Steem API介绍系列#4 - 转账操作篇<br>date: 2017-08-07 20:00:12<br>tags:</p>
+<ul>
+<li>Python</li>
+<li>Steem</li>
+<li>Steemit</li>
+</ul>
+<hr>
+<p>今天来说说如何使用Python API进行账户相关的操作。主要是使用的方法都封装在了Commit这个类中，大家可以参考这个来的<a href="https://github.com/steemit/steem-python/blob/master/steem/commit.py" rel="external nofollow noopener noreferrer" target="_blank">源代码</a>。</p>
+<h2 id="进行转账操作"><a href="#进行转账操作" class="headerlink" title="进行转账操作"></a>进行转账操作</h2><p>要想进行转账操作，前面提到的POSTING key就不行了，这里需要获取另外一个key，也就是”Active key”，同样，点”Wallet” -&gt; ”Permissions”，就会看到Active key，不是系统默认显示的这个，点“Login to see private key”，登陆后就可以看到一个以数字5开头的密码了。</p>
+<p><img src="/images/steemit/python/active-key.jpg" alt=""></p>
+<p>有了这个key，就可以进行转账操作了。下面首先来调戏一下booster这个机器人，它和randowhale类似，你转钱给它，它就会Upvote你。下面用前面发过的测试贴来验证一下booster的upvote是不是够给力。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> steem <span class="keyword">import</span> Steem</div><div class="line"></div><div class="line">user = <span class="string">'yuxi'</span></div><div class="line"></div><div class="line">wif = &#123;</div><div class="line">    <span class="string">"active"</span>: <span class="string">"把你的Active key复制到这里"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">steem = Steem(keys=wif)</div><div class="line">steem.transfer(<span class="string">'booster'</span>, <span class="number">1</span> , <span class="string">'SBD'</span>, memo=<span class="string">'https://steemit.com/test/@yuxi/python-api-test'</span>, account=user)</div></pre></td></tr></table></figure>
+<p>运行完毕后，查看一下，在我的history里面显示转账成功。</p>
+<p><img src="/images/steemit/python/booster.jpg" alt=""></p>
+<p>然后耐心的等了两个多小时，看到booser来upvote了我的帖子，因为只有它自己upvote，所以很清楚的看到它这一下upvote还挺给力，我付了1 SBD，这下upvote却带来了$1.62。</p>
+<p>下面再来试试在Steem不同账号之间的转账，比如，把1 SBD转到自己的Saving账户中去：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">steem.transfer_to_savings(<span class="number">1</span>, <span class="string">'SBD'</span>, <span class="string">'Python API test'</span>, account=user)</div></pre></td></tr></table></figure>
+<h2 id="自动Redeem收入"><a href="#自动Redeem收入" class="headerlink" title="自动Redeem收入"></a>自动Redeem收入</h2><p>我不知道大家怎么看待Steemit的这个功能，每次有收入到账了，还需要自己点下这个按钮才能真正入账。我觉得应该在用户的profile中添加一个选项，类似“Redeem automatically”，让用户自己来设置是想手工claim还是想让系统自动claim。</p>
+<p><img src="/images/steemit/python/redeem.jpg" alt=""></p>
+<p>Anyway，下面来看看如何使用Python API来自动claim那些到账的rewards。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> steem <span class="keyword">import</span> Steem</div><div class="line"><span class="keyword">from</span> steem.account <span class="keyword">import</span> Account</div><div class="line"></div><div class="line">user = <span class="string">'yuxi'</span></div><div class="line">account = Account(user)</div><div class="line"></div><div class="line">wif = &#123;</div><div class="line">    <span class="string">"posting"</span>: <span class="string">"将你的POSTING key复制到这里"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">try</span>:</div><div class="line">  steem = Steem(keys=wif)</div><div class="line"></div><div class="line">  sbd   = account.balances[<span class="string">"rewards"</span>][<span class="string">"SBD"</span>]</div><div class="line">  steem = account.balances[<span class="string">"rewards"</span>][<span class="string">"STEEM"</span>]</div><div class="line">  vests = account.balances[<span class="string">"rewards"</span>][<span class="string">"VESTS"</span>]</div><div class="line"></div><div class="line">  <span class="keyword">if</span> sbd &gt;<span class="number">0</span> <span class="keyword">or</span> steem &gt;<span class="number">0</span> <span class="keyword">or</span> vests &gt; <span class="number">0</span>:</div><div class="line">    print(<span class="string">'claiming rewards ... '</span>)</div><div class="line">    steem.claim_reward_balance(account=user)</div><div class="line">  <span class="keyword">else</span>:</div><div class="line">    print(<span class="string">'nothing to claim'</span>)</div><div class="line"><span class="keyword">except</span>:</div><div class="line">  print(<span class="string">'oops, something not right.'</span>)</div></pre></td></tr></table></figure>
+<p>接下来就可以添加一个Cron job，比如：每天的凌晨1点让系统自动执行你的这个程序，从而省去了手工claim rewards的麻烦。</p>
+<h2 id="通过API进行交易的初步设想"><a href="#通过API进行交易的初步设想" class="headerlink" title="通过API进行交易的初步设想"></a>通过API进行交易的初步设想</h2><p>很多人都用过 blocktrades 的服务把SBD交易成比特币，在blocktrades的基本流程中，首先要根据你的交易信息，比如SBD -&gt; BTC以及你的比特币钱包地址来生成一个memo，然后再把交易金额转到 @blocktrades 并把memo字段填上前面获取的memo值。不知道有哪位大神用过 blocktrades.us的API，如何通过调用API来生成 memo？(How to get memo field value via blocktrades API? )  @oflyhigh @myfirst @blocktrades</p>
+<p><img src="/images/steemit/python/blocktrades.jpg" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Python Steem API介绍系列#4 - 转账操作篇&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;author: 羽西&lt;br&gt;title: Python Steem API介绍系列#4 - 转账操作篇&lt;br&gt;category: Steemit&lt;br&gt;googleads: true&lt;br
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Python Steem API介绍系列#3 - 发帖回复点赞篇</title>
