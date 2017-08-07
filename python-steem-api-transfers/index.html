@@ -3,29 +3,29 @@
 <head>
     <meta charset="utf-8">
     
-    <title>范羽西博客</title>
+    <title>Python Steem API介绍系列#4 - 转账操作篇 | 范羽西博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="">
+        <meta name="keywords" content="Python,Steem,Steemit">
     
-    <meta name="description" content="Python Steem API介绍系列#4 - 转账操作篇
+    <meta name="description" content="今天来说说如何使用Python API进行账户相关的操作。主要是使用的方法都封装在了Commit这个类中，大家可以参考这个来的源代码。
 
-author: 羽西title: Python Steem API介绍系列#4 - 转账操作篇category: Steemitgoogleads: truegoogleads_top: truekeywords: Python Steem API介绍系列#4 - 转账操作篇date: 2017-08-07 06:00:12tags:">
+进行转账操作要想进行转账操作，前面提到的POSTING key就不行了，这里需要获取另外一个key，也就是”Active key”，同样，点”Wallet” -&amp;gt; ”Permissions”，就会看到Active key，不是系统默认显示的这个，点“Log">
 <meta property="og:type" content="article">
-<meta property="og:title" content="范羽西博客">
+<meta property="og:title" content="Python Steem API介绍系列#4 - 转账操作篇">
 <meta property="og:url" content="https://cn.yuxifan.com/python-steem-api-transfers/index.html">
 <meta property="og:site_name" content="范羽西博客">
-<meta property="og:description" content="Python Steem API介绍系列#4 - 转账操作篇
+<meta property="og:description" content="今天来说说如何使用Python API进行账户相关的操作。主要是使用的方法都封装在了Commit这个类中，大家可以参考这个来的源代码。
 
-author: 羽西title: Python Steem API介绍系列#4 - 转账操作篇category: Steemitgoogleads: truegoogleads_top: truekeywords: Python Steem API介绍系列#4 - 转账操作篇date: 2017-08-07 06:00:12tags:">
-<meta property="og:image" content="https://cn.yuxifan.com/images/steemit/python/active-key.jpg">
-<meta property="og:updated_time" content="2017-08-07T12:54:06.322Z">
+进行转账操作要想进行转账操作，前面提到的POSTING key就不行了，这里需要获取另外一个key，也就是”Active key”，同样，点”Wallet” -&amp;gt; ”Permissions”，就会看到Active key，不是系统默认显示的这个，点“Log">
+<meta property="og:image" content="https://cn.yuxifan.com/images/steemit/python/transfer.png">
+<meta property="og:updated_time" content="2017-08-07T13:02:55.837Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="范羽西博客">
-<meta name="twitter:description" content="Python Steem API介绍系列#4 - 转账操作篇
+<meta name="twitter:title" content="Python Steem API介绍系列#4 - 转账操作篇">
+<meta name="twitter:description" content="今天来说说如何使用Python API进行账户相关的操作。主要是使用的方法都封装在了Commit这个类中，大家可以参考这个来的源代码。
 
-author: 羽西title: Python Steem API介绍系列#4 - 转账操作篇category: Steemitgoogleads: truegoogleads_top: truekeywords: Python Steem API介绍系列#4 - 转账操作篇date: 2017-08-07 06:00:12tags:">
-<meta name="twitter:image" content="https://cn.yuxifan.com/images/steemit/python/active-key.jpg">
+进行转账操作要想进行转账操作，前面提到的POSTING key就不行了，这里需要获取另外一个key，也就是”Active key”，同样，点”Wallet” -&amp;gt; ”Permissions”，就会看到Active key，不是系统默认显示的这个，点“Log">
+<meta name="twitter:image" content="https://cn.yuxifan.com/images/steemit/python/transfer.png">
     
 
     
@@ -151,7 +151,7 @@ ga('send', 'pageview');
   
     <h1 class="header">
     
-    未分类
+    <a class="page-title-link" href="/categories/Steemit/">Steemit</a>
     </h1>
   
 
@@ -161,29 +161,42 @@ ga('send', 'pageview');
                             <article id="post-python-steem-api-transfers" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Python Steem API介绍系列#4 - 转账操作篇
+        </h1>
+    
+
+            </header>
+        
         
             <div class="article-subtitle">
                 <a href="/python-steem-api-transfers/" class="article-date">
-    <time datetime="2017-08-07T12:54:06.322Z" itemprop="datePublished">2017-08-07</time>
+    <time datetime="2017-08-07T05:00:12.000Z" itemprop="datePublished">2017-08-07</time>
 </a>
                 
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Steem/">Steem</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Steemit/">Steemit</a></li></ul>
+
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
 
             
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-            <p>Python Steem API介绍系列#4 - 转账操作篇</p>
-<hr>
-<p>author: 羽西<br>title: Python Steem API介绍系列#4 - 转账操作篇<br>category: Steemit<br>googleads: true<br>googleads_top: true<br>keywords: Python Steem API介绍系列#4 - 转账操作篇<br>date: 2017-08-07 06:00:12<br>tags:</p>
-<ul>
-<li>Python</li>
-<li>Steem</li>
-<li>Steemit</li>
-</ul>
-<hr>
-<p>今天来说说如何使用Python API进行账户相关的操作。主要是使用的方法都封装在了Commit这个类中，大家可以参考这个来的<a href="https://github.com/steemit/steem-python/blob/master/steem/commit.py" rel="external nofollow noopener noreferrer" target="_blank">源代码</a>。</p>
+              <!-- autosize -->
+              <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9869806761757481" data-ad-slot="8827673952" data-ad-format="auto"></ins>
+
+              <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            
+
+            <p>今天来说说如何使用Python API进行账户相关的操作。主要是使用的方法都封装在了Commit这个类中，大家可以参考这个来的<a href="https://github.com/steemit/steem-python/blob/master/steem/commit.py" rel="external nofollow noopener noreferrer" target="_blank">源代码</a>。</p>
+<p><img src="/images/steemit/python/transfer.png" alt=""></p>
 <h2 id="进行转账操作"><a href="#进行转账操作" class="headerlink" title="进行转账操作"></a>进行转账操作</h2><p>要想进行转账操作，前面提到的POSTING key就不行了，这里需要获取另外一个key，也就是”Active key”，同样，点”Wallet” -&gt; ”Permissions”，就会看到Active key，不是系统默认显示的这个，点“Login to see private key”，登陆后就可以看到一个以数字5开头的密码了。</p>
 <p><img src="/images/steemit/python/active-key.jpg" alt=""></p>
 <p>有了这个key，就可以进行转账操作了。下面首先来调戏一下booster这个机器人，它和randowhale类似，你转钱给它，它就会Upvote你。下面用前面发过的测试贴来验证一下booster的upvote是不是够给力。</p>
@@ -202,6 +215,15 @@ ga('send', 'pageview');
 <p><img src="/images/steemit/python/blocktrades.jpg" alt=""></p>
 
 
+            
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+              <!-- autosize -->
+              <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9869806761757481" data-ad-slot="8827673952" data-ad-format="auto"></ins>
+
+              <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
             
 
         </div>
@@ -350,7 +372,7 @@ ga('send', 'pageview');
                             <a href="/python-steem-api-transfers/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/steemit/python/active-key.jpg)" alt="" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/steemit/python/transfer.png)" alt="Python Steem API介绍系列#4 - 转账操作篇" class="thumbnail-image"></span>
     
     
 </a>
@@ -358,9 +380,9 @@ ga('send', 'pageview');
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/python-steem-api-transfers/" class="title"></a></p>
-                            <p class="item-date"><time datetime="2017-08-07T12:54:06.322Z" itemprop="datePublished">2017-08-07</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Steemit/">Steemit</a></p>
+                            <p class="item-title"><a href="/python-steem-api-transfers/" class="title">Python Steem API介绍系列#4 - 转账操作篇</a></p>
+                            <p class="item-date"><time datetime="2017-08-07T05:00:12.000Z" itemprop="datePublished">2017-08-07</time></p>
                         </div>
                     </li>
                 
@@ -453,7 +475,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Steemit/">Steemit</a><span class="category-list-count">4</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Steemit/">Steemit</a><span class="category-list-count">5</span></li></ul>
         </div>
     </div>
 

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cn.yuxifan.com/"/>
-  <updated>2017-08-07T12:54:06.322Z</updated>
+  <updated>2017-08-07T13:02:55.837Z</updated>
   <id>https://cn.yuxifan.com/</id>
   
   <author>
@@ -16,22 +16,14 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>Python Steem API介绍系列#4 - 转账操作篇</title>
     <link href="https://cn.yuxifan.com/python-steem-api-transfers/"/>
     <id>https://cn.yuxifan.com/python-steem-api-transfers/</id>
-    <published>2017-08-07T12:54:06.322Z</published>
-    <updated>2017-08-07T12:54:06.322Z</updated>
+    <published>2017-08-07T05:00:12.000Z</published>
+    <updated>2017-08-07T13:02:55.837Z</updated>
     
-    <content type="html"><![CDATA[<p>Python Steem API介绍系列#4 - 转账操作篇</p>
-<hr>
-<p>author: 羽西<br>title: Python Steem API介绍系列#4 - 转账操作篇<br>category: Steemit<br>googleads: true<br>googleads_top: true<br>keywords: Python Steem API介绍系列#4 - 转账操作篇<br>date: 2017-08-07 06:00:12<br>tags:</p>
-<ul>
-<li>Python</li>
-<li>Steem</li>
-<li>Steemit</li>
-</ul>
-<hr>
-<p>今天来说说如何使用Python API进行账户相关的操作。主要是使用的方法都封装在了Commit这个类中，大家可以参考这个来的<a href="https://github.com/steemit/steem-python/blob/master/steem/commit.py" rel="external nofollow noopener noreferrer" target="_blank">源代码</a>。</p>
+    <content type="html"><![CDATA[<p>今天来说说如何使用Python API进行账户相关的操作。主要是使用的方法都封装在了Commit这个类中，大家可以参考这个来的<a href="https://github.com/steemit/steem-python/blob/master/steem/commit.py" rel="external nofollow noopener noreferrer" target="_blank">源代码</a>。</p>
+<p><img src="/images/steemit/python/transfer.png" alt=""></p>
 <h2 id="进行转账操作"><a href="#进行转账操作" class="headerlink" title="进行转账操作"></a>进行转账操作</h2><p>要想进行转账操作，前面提到的POSTING key就不行了，这里需要获取另外一个key，也就是”Active key”，同样，点”Wallet” -&gt; ”Permissions”，就会看到Active key，不是系统默认显示的这个，点“Login to see private key”，登陆后就可以看到一个以数字5开头的密码了。</p>
 <p><img src="/images/steemit/python/active-key.jpg" alt=""></p>
 <p>有了这个key，就可以进行转账操作了。下面首先来调戏一下booster这个机器人，它和randowhale类似，你转钱给它，它就会Upvote你。下面用前面发过的测试贴来验证一下booster的upvote是不是够给力。</p>
@@ -52,12 +44,18 @@
     
     <summary type="html">
     
-      &lt;p&gt;Python Steem API介绍系列#4 - 转账操作篇&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;author: 羽西&lt;br&gt;title: Python Steem API介绍系列#4 - 转账操作篇&lt;br&gt;category: Steemit&lt;br&gt;googleads: true&lt;br
+      &lt;p&gt;今天来说说如何使用Python API进行账户相关的操作。主要是使用的方法都封装在了Commit这个类中，大家可以参考这个来的&lt;a href=&quot;https://github.com/steemit/steem-python/blob/master/steem/commit.
     
     </summary>
     
+      <category term="Steemit" scheme="https://cn.yuxifan.com/categories/Steemit/"/>
+    
+    
+      <category term="Python" scheme="https://cn.yuxifan.com/tags/Python/"/>
+    
+      <category term="Steem" scheme="https://cn.yuxifan.com/tags/Steem/"/>
+    
+      <category term="Steemit" scheme="https://cn.yuxifan.com/tags/Steemit/"/>
     
   </entry>
   
