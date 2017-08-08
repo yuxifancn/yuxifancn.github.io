@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cn.yuxifan.com/"/>
-  <updated>2017-08-07T13:20:01.927Z</updated>
+  <updated>2017-08-08T12:48:07.470Z</updated>
   <id>https://cn.yuxifan.com/</id>
   
   <author>
@@ -19,10 +19,10 @@
     <title>Python Steem API介绍系列#4 - 转账操作篇</title>
     <link href="https://cn.yuxifan.com/python-steem-api-transfers/"/>
     <id>https://cn.yuxifan.com/python-steem-api-transfers/</id>
-    <published>2017-08-07T05:00:12.000Z</published>
-    <updated>2017-08-07T13:20:01.927Z</updated>
+    <published>2017-08-08T13:00:12.000Z</published>
+    <updated>2017-08-08T12:48:07.470Z</updated>
     
-    <content type="html"><![CDATA[<p>今天来说说如何使用Python API进行账户相关的操作。主要是使用的方法都封装在了Commit这个类中，大家可以参考这个来的<a href="https://github.com/steemit/steem-python/blob/master/steem/commit.py" rel="external nofollow noopener noreferrer" target="_blank">源代码</a>。</p>
+    <content type="html"><![CDATA[<p>今天来说说如何使用Python API进行账户相关的操作。和帐户操作相关的方法都封装在了Commit这个类中，大家可以参考这个类的<a href="https://github.com/steemit/steem-python/blob/master/steem/commit.py" rel="external nofollow noopener noreferrer" target="_blank">源代码</a>。</p>
 <p><img src="/images/steemit/python/transfer.png" alt=""></p>
 <h2 id="进行转账操作"><a href="#进行转账操作" class="headerlink" title="进行转账操作"></a>进行转账操作</h2><p>要想进行转账操作，前面提到的POSTING key就不行了，这里需要获取另外一个key，也就是”Active key”，同样，点”Wallet” -&gt; ”Permissions”，就会看到Active key，不是系统默认显示的key，点“LOGIN TO SHOW”，登陆后就可以看到一个以数字5开头的密码了。</p>
 <p><img src="/images/steemit/python/active-key.jpg" alt=""></p>
@@ -44,7 +44,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;今天来说说如何使用Python API进行账户相关的操作。主要是使用的方法都封装在了Commit这个类中，大家可以参考这个来的&lt;a href=&quot;https://github.com/steemit/steem-python/blob/master/steem/commit.
+      &lt;p&gt;今天来说说如何使用Python API进行账户相关的操作。和帐户操作相关的方法都封装在了Commit这个类中，大家可以参考这个类的&lt;a href=&quot;https://github.com/steemit/steem-python/blob/master/steem/commi
     
     </summary>
     

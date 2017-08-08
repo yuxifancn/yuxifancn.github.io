@@ -8,23 +8,23 @@
     
         <meta name="keywords" content="Python,Steem,Steemit">
     
-    <meta name="description" content="今天来说说如何使用Python API进行账户相关的操作。主要是使用的方法都封装在了Commit这个类中，大家可以参考这个来的源代码。
+    <meta name="description" content="今天来说说如何使用Python API进行账户相关的操作。和帐户操作相关的方法都封装在了Commit这个类中，大家可以参考这个类的源代码。
 
-进行转账操作要想进行转账操作，前面提到的POSTING key就不行了，这里需要获取另外一个key，也就是”Active key”，同样，点”Wallet” -&amp;gt; ”Permissions”，就会看到Active key，不是系统默认显示的key，点“LO">
+进行转账操作要想进行转账操作，前面提到的POSTING key就不行了，这里需要获取另外一个key，也就是”Active key”，同样，点”Wallet” -&amp;gt; ”Permissions”，就会看到Active key，不是系统默认显示的key，点“">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python Steem API介绍系列#4 - 转账操作篇">
 <meta property="og:url" content="https://cn.yuxifan.com/python-steem-api-transfers/index.html">
 <meta property="og:site_name" content="范羽西博客">
-<meta property="og:description" content="今天来说说如何使用Python API进行账户相关的操作。主要是使用的方法都封装在了Commit这个类中，大家可以参考这个来的源代码。
+<meta property="og:description" content="今天来说说如何使用Python API进行账户相关的操作。和帐户操作相关的方法都封装在了Commit这个类中，大家可以参考这个类的源代码。
 
-进行转账操作要想进行转账操作，前面提到的POSTING key就不行了，这里需要获取另外一个key，也就是”Active key”，同样，点”Wallet” -&amp;gt; ”Permissions”，就会看到Active key，不是系统默认显示的key，点“LO">
+进行转账操作要想进行转账操作，前面提到的POSTING key就不行了，这里需要获取另外一个key，也就是”Active key”，同样，点”Wallet” -&amp;gt; ”Permissions”，就会看到Active key，不是系统默认显示的key，点“">
 <meta property="og:image" content="https://cn.yuxifan.com/images/steemit/python/transfer.png">
-<meta property="og:updated_time" content="2017-08-07T13:20:01.927Z">
+<meta property="og:updated_time" content="2017-08-08T12:48:07.470Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python Steem API介绍系列#4 - 转账操作篇">
-<meta name="twitter:description" content="今天来说说如何使用Python API进行账户相关的操作。主要是使用的方法都封装在了Commit这个类中，大家可以参考这个来的源代码。
+<meta name="twitter:description" content="今天来说说如何使用Python API进行账户相关的操作。和帐户操作相关的方法都封装在了Commit这个类中，大家可以参考这个类的源代码。
 
-进行转账操作要想进行转账操作，前面提到的POSTING key就不行了，这里需要获取另外一个key，也就是”Active key”，同样，点”Wallet” -&amp;gt; ”Permissions”，就会看到Active key，不是系统默认显示的key，点“LO">
+进行转账操作要想进行转账操作，前面提到的POSTING key就不行了，这里需要获取另外一个key，也就是”Active key”，同样，点”Wallet” -&amp;gt; ”Permissions”，就会看到Active key，不是系统默认显示的key，点“">
 <meta name="twitter:image" content="https://cn.yuxifan.com/images/steemit/python/transfer.png">
     
 
@@ -174,7 +174,7 @@ ga('send', 'pageview');
         
             <div class="article-subtitle">
                 <a href="/python-steem-api-transfers/" class="article-date">
-    <time datetime="2017-08-07T05:00:12.000Z" itemprop="datePublished">2017-08-07</time>
+    <time datetime="2017-08-08T13:00:12.000Z" itemprop="datePublished">2017-08-08</time>
 </a>
                 
     <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Steem/">Steem</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Steemit/">Steemit</a></li></ul>
@@ -195,7 +195,7 @@ ga('send', 'pageview');
               </script>
             
 
-            <p>今天来说说如何使用Python API进行账户相关的操作。主要是使用的方法都封装在了Commit这个类中，大家可以参考这个来的<a href="https://github.com/steemit/steem-python/blob/master/steem/commit.py" rel="external nofollow noopener noreferrer" target="_blank">源代码</a>。</p>
+            <p>今天来说说如何使用Python API进行账户相关的操作。和帐户操作相关的方法都封装在了Commit这个类中，大家可以参考这个类的<a href="https://github.com/steemit/steem-python/blob/master/steem/commit.py" rel="external nofollow noopener noreferrer" target="_blank">源代码</a>。</p>
 <p><img src="/images/steemit/python/transfer.png" alt=""></p>
 <h2 id="进行转账操作"><a href="#进行转账操作" class="headerlink" title="进行转账操作"></a>进行转账操作</h2><p>要想进行转账操作，前面提到的POSTING key就不行了，这里需要获取另外一个key，也就是”Active key”，同样，点”Wallet” -&gt; ”Permissions”，就会看到Active key，不是系统默认显示的key，点“LOGIN TO SHOW”，登陆后就可以看到一个以数字5开头的密码了。</p>
 <p><img src="/images/steemit/python/active-key.jpg" alt=""></p>
@@ -382,7 +382,7 @@ ga('send', 'pageview');
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Steemit/">Steemit</a></p>
                             <p class="item-title"><a href="/python-steem-api-transfers/" class="title">Python Steem API介绍系列#4 - 转账操作篇</a></p>
-                            <p class="item-date"><time datetime="2017-08-07T05:00:12.000Z" itemprop="datePublished">2017-08-07</time></p>
+                            <p class="item-date"><time datetime="2017-08-08T13:00:12.000Z" itemprop="datePublished">2017-08-08</time></p>
                         </div>
                     </li>
                 
