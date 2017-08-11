@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cn.yuxifan.com/"/>
-  <updated>2017-08-11T12:44:45.700Z</updated>
+  <updated>2017-08-11T22:56:38.135Z</updated>
   <id>https://cn.yuxifan.com/</id>
   
   <author>
@@ -16,14 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>Python piston API介绍系列#5 － steempy命令行工具篇</title>
     <link href="https://cn.yuxifan.com/python-steem-cli/"/>
     <id>https://cn.yuxifan.com/python-steem-cli/</id>
-    <published>2017-08-11T12:44:45.700Z</published>
-    <updated>2017-08-11T12:44:45.700Z</updated>
+    <published>2017-08-12T05:40:12.000Z</published>
+    <updated>2017-08-11T22:56:38.135Z</updated>
     
-    <content type="html"><![CDATA[<p>Python Steem API介绍系列#5 - steempy命令行工具篇</p>
-<p>今天来介绍一下Steem Python配套的命令行工具：steempy。有了这个工具，你不需要编程也能做很多事情了，比如：follow, upvote, transfer等操作。</p>
+    <content type="html"><![CDATA[<p>今天来介绍一下Steem Python配套的命令行工具：steempy。有了这个工具，你不需要编程也能做很多事情了，比如：follow, upvote, transfer等操作。</p>
 <p><img src="/images/steemit/python/cli.jpg" alt="Steem Python Cli"></p>
 <h2 id="检查你的安装"><a href="#检查你的安装" class="headerlink" title="检查你的安装"></a>检查你的安装</h2><p>如果你按照我前面的教程安装了Steem官方的Python库，那么就可以直接使用steempy了，否则，运行下面命令安装：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip3 install -U steem</div></pre></td></tr></table></figure>
@@ -61,18 +60,25 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">steempy convert 1</div><div class="line">Passphrase:</div></pre></td></tr></table></figure>
 <p>给别的帐户转帐：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">steempy transfer XXXX 0.01 SBD <span class="built_in">test</span>-steempy</div></pre></td></tr></table></figure>
-<p><img src="https://steemitimages.com/DQmU3Qdt7dKuahNv3gtrRkFhcRQz3becPzXRWa3Kc56HTni/image.png" alt=""></p>
 <p><img src="/images/yuxi-steemit.png" alt="Yuxi @ Steemit"></p>
-<p><a href="https://steemit.com" rel="external nofollow noopener noreferrer" target="_blank">https://steemit.com</a> 首发。非常感谢阅读，欢迎FOLLOW和Upvote <a href="https://steemit.com/@yuxi" rel="external nofollow noopener noreferrer" target="_blank">@yuxi</a> 激励我创作更多更好的内容。</p>
+<p><a href="https://steemit.com" rel="external nofollow noopener noreferrer" target="_blank">https://steemit.com</a> 首发。非常感谢阅读，欢迎Follow,Resteem和Upvote <a href="https://steemit.com/@yuxi" rel="external nofollow noopener noreferrer" target="_blank">@yuxi</a> 激励我创作更多更好的内容。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Python Steem API介绍系列#5 - steempy命令行工具篇&lt;/p&gt;
-&lt;p&gt;今天来介绍一下Steem Python配套的命令行工具：steempy。有了这个工具，你不需要编程也能做很多事情了，比如：follow, upvote, transfer等操作。&lt;/
+      &lt;p&gt;今天来介绍一下Steem Python配套的命令行工具：steempy。有了这个工具，你不需要编程也能做很多事情了，比如：follow, upvote, transfer等操作。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/steemit/python/cli.jpg
     
     </summary>
     
+      <category term="Steemit" scheme="https://cn.yuxifan.com/categories/Steemit/"/>
+    
+    
+      <category term="Python" scheme="https://cn.yuxifan.com/tags/Python/"/>
+    
+      <category term="Steem" scheme="https://cn.yuxifan.com/tags/Steem/"/>
+    
+      <category term="Steemit" scheme="https://cn.yuxifan.com/tags/Steemit/"/>
     
   </entry>
   
