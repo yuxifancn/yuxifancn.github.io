@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://cn.yuxifan.com/python-steemit-api-account-management/</loc>
+    
+    <lastmod>2017-08-11T23:01:03.554Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://cn.yuxifan.com/python-steem-cli/</loc>
     
-    <lastmod>2017-08-11T22:56:38.135Z</lastmod>
+    <lastmod>2017-08-11T22:59:51.060Z</lastmod>
     
   </url>
   
@@ -26,13 +33,6 @@
     <loc>https://cn.yuxifan.com/python-steem-api-read-post/</loc>
     
     <lastmod>2017-08-01T13:05:25.750Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://cn.yuxifan.com/python-steemit-api-account-management/</loc>
-    
-    <lastmod>2017-07-31T08:38:13.206Z</lastmod>
     
   </url>
   

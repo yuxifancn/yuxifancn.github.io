@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cn.yuxifan.com/"/>
-  <updated>2017-08-11T22:56:38.135Z</updated>
+  <updated>2017-08-11T22:59:51.060Z</updated>
   <id>https://cn.yuxifan.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Python piston API介绍系列#5 － steempy命令行工具篇</title>
+    <title>Python Steem API介绍系列#5 － steempy命令行工具篇</title>
     <link href="https://cn.yuxifan.com/python-steem-cli/"/>
     <id>https://cn.yuxifan.com/python-steem-cli/</id>
     <published>2017-08-12T05:40:12.000Z</published>
-    <updated>2017-08-11T22:56:38.135Z</updated>
+    <updated>2017-08-11T22:59:51.060Z</updated>
     
     <content type="html"><![CDATA[<p>今天来介绍一下Steem Python配套的命令行工具：steempy。有了这个工具，你不需要编程也能做很多事情了，比如：follow, upvote, transfer等操作。</p>
 <p><img src="/images/steemit/python/cli.jpg" alt="Steem Python Cli"></p>
@@ -219,11 +219,11 @@
   </entry>
   
   <entry>
-    <title>Python piston API介绍系列#1 － 账户篇</title>
+    <title>Python Steem API介绍系列#1 － 账户篇</title>
     <link href="https://cn.yuxifan.com/python-steemit-api-account-management/"/>
     <id>https://cn.yuxifan.com/python-steemit-api-account-management/</id>
     <published>2017-07-31T05:40:12.000Z</published>
-    <updated>2017-07-31T08:38:13.206Z</updated>
+    <updated>2017-08-11T23:01:03.554Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/steemit/python/steem-account.png" alt=""></p>
 <p>在Account这个类中封装了各种账户相关的信息，下面介绍一下如何使用，同时也讨论一下一些重要的指标，比如声望值，投票力等，也许我对用户操作对这些值的影响的理解有偏差，希望各位大佬们多多指点。</p>
