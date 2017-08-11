@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://cn.yuxifan.com/python-steem-cli/</loc>
+    
+    <lastmod>2017-08-11T12:44:45.700Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://cn.yuxifan.com/python-steem-api-transfers/</loc>
     
     <lastmod>2017-08-08T12:48:07.470Z</lastmod>
