@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cn.yuxifan.com/"/>
-  <updated>2017-08-23T11:01:30.837Z</updated>
+  <updated>2017-08-23T11:09:04.714Z</updated>
   <id>https://cn.yuxifan.com/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="https://cn.yuxifan.com/steemsql-client-account/"/>
     <id>https://cn.yuxifan.com/steemsql-client-account/</id>
     <published>2017-08-23T05:40:12.000Z</published>
-    <updated>2017-08-23T11:01:30.837Z</updated>
+    <updated>2017-08-23T11:09:04.714Z</updated>
     
     <content type="html"><![CDATA[<p>最近在写一些有趣的Steem相关程序。尝试了一下Steemsql，感觉非常好用。就像 @jubi 曾经提到的一样，很多对IT技术不是很熟悉的朋友经常想要查询一些Steem的数据。因此就萌生了写一个教程的想法。这一系列教程主要是针对小白们的，欢迎大神们指正。</p>
+<p><img src="/images/steemit/steemsql/steemsql.png" alt=""><br>图片来源：Steemsql官网</p>
 <h2 id="安装数据库客户端工具-Install-DBeaver"><a href="#安装数据库客户端工具-Install-DBeaver" class="headerlink" title="安装数据库客户端工具(Install DBeaver)"></a>安装数据库客户端工具(Install DBeaver)</h2><p>首先需要下载微软的SQL Server JDBC驱动程序，后面要用到。<br>Download Microsoft SQL Server JDBC Driver from:<br><a href="https://www.microsoft.com/en-gb/download/details.aspx?id=11774" rel="external nofollow noopener noreferrer" target="_blank">https://www.microsoft.com/en-gb/download/details.aspx?id=11774</a></p>
 <p>下载完毕后解开压缩包，会看到sqljdbc42.jar这个文件。<br>Unzip the file and you will find sqljdbc42.jar:<br><img src="/images/steemit/steemsql/05_sqljdbc_driver.png" alt=""></p>
 <p>接下来安装数据库客户端工具。这样的工具有很多，这里选择DBeaver作为示范：<br>Download DBeaver:<br><a href="https://dbeaver.jkiss.org/download/" rel="external nofollow noopener noreferrer" target="_blank">https://dbeaver.jkiss.org/download/</a></p>
@@ -55,7 +56,7 @@
     <summary type="html">
     
       &lt;p&gt;最近在写一些有趣的Steem相关程序。尝试了一下Steemsql，感觉非常好用。就像 @jubi 曾经提到的一样，很多对IT技术不是很熟悉的朋友经常想要查询一些Steem的数据。因此就萌生了写一个教程的想法。这一系列教程主要是针对小白们的，欢迎大神们指正。&lt;/p&gt;
-&lt;h2 
+&lt;p&gt;&lt;
     
     </summary>
     
