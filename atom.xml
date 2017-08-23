@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cn.yuxifan.com/"/>
-  <updated>2017-08-11T22:59:51.060Z</updated>
+  <updated>2017-08-23T11:01:30.837Z</updated>
   <id>https://cn.yuxifan.com/</id>
   
   <author>
@@ -14,6 +14,63 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Steemsql系列教程一：安装配置+账户篇</title>
+    <link href="https://cn.yuxifan.com/steemsql-client-account/"/>
+    <id>https://cn.yuxifan.com/steemsql-client-account/</id>
+    <published>2017-08-23T05:40:12.000Z</published>
+    <updated>2017-08-23T11:01:30.837Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在写一些有趣的Steem相关程序。尝试了一下Steemsql，感觉非常好用。就像 @jubi 曾经提到的一样，很多对IT技术不是很熟悉的朋友经常想要查询一些Steem的数据。因此就萌生了写一个教程的想法。这一系列教程主要是针对小白们的，欢迎大神们指正。</p>
+<h2 id="安装数据库客户端工具-Install-DBeaver"><a href="#安装数据库客户端工具-Install-DBeaver" class="headerlink" title="安装数据库客户端工具(Install DBeaver)"></a>安装数据库客户端工具(Install DBeaver)</h2><p>首先需要下载微软的SQL Server JDBC驱动程序，后面要用到。<br>Download Microsoft SQL Server JDBC Driver from:<br><a href="https://www.microsoft.com/en-gb/download/details.aspx?id=11774" rel="external nofollow noopener noreferrer" target="_blank">https://www.microsoft.com/en-gb/download/details.aspx?id=11774</a></p>
+<p>下载完毕后解开压缩包，会看到sqljdbc42.jar这个文件。<br>Unzip the file and you will find sqljdbc42.jar:<br><img src="/images/steemit/steemsql/05_sqljdbc_driver.png" alt=""></p>
+<p>接下来安装数据库客户端工具。这样的工具有很多，这里选择DBeaver作为示范：<br>Download DBeaver:<br><a href="https://dbeaver.jkiss.org/download/" rel="external nofollow noopener noreferrer" target="_blank">https://dbeaver.jkiss.org/download/</a></p>
+<p>安装完毕后，一看这个界面非常眼熟，一眼就认出来这肯定是在eclipse基础上进行的二次开发。。。</p>
+<p>系统会要求你新建数据库连接。<br>After installation, you will see this window asking you to create new connection:</p>
+<p><img src="/images/steemit/steemsql/01_create_new_connection.jpg" alt="新建数据库连接"></p>
+<p>输入以下信息：<br>Enter the following information, e.g.<br>Host: sql.steemsql.com<br>Database/Schema: DBSteem<br>User name: steemit<br>Password: steemit</p>
+<p><img src="/images/steemit/steemsql/02_new_connection.png" alt=""></p>
+<p>由于还没有安装Microsoft SQL Server JDBC驱动，因此系统会报错。<br>If you haven’t installed Microsoft SQL Server JDBC Driver, as shown in the following diagram, just download it.<br><img src="/images/steemit/steemsql/03_download_driver.jpg" alt=""></p>
+<p><img src="/images/steemit/steemsql/04_jdbc_driver_error.png" alt=""></p>
+<p>不要紧，添加前面下载好的驱动，再测试连接，应该就没什么问题了</p>
+<p>Add the driver and test connection again, you will see:<br><img src="/images/steemit/steemsql/06_connected.png" alt=""></p>
+<p>运行一个测试的SQL语句：<br>Run a test query:</p>
+<p><img src="/images/steemit/steemsql/07_test.png" alt=""></p>
+<h2 id="查询账户相关信息"><a href="#查询账户相关信息" class="headerlink" title="查询账户相关信息"></a>查询账户相关信息</h2><p>查看表结构，看看里面都有什么数据：</p>
+<p>sp_columns Accounts;</p>
+<p>看看威望值最高的20个牛人：</p>
+<p>select top 20 name, reputation, post_count, comment_count<br>from Accounts<br>order by reputation desc;</p>
+<p><img src="/images/steemit/steemsql/rep_1.jpg" alt=""></p>
+<p>不过这个reputation的值和我们所看到的似乎不太一样，其实这里需要转换一下就OK了：</p>
+<p>select top 20 name, cast(log10(reputation)*9 - 56 as decimal(4,2)) as reputation, post_count, comment_count<br>from Accounts<br>where reputation&gt;0<br>order by reputation desc;</p>
+<p><img src="/images/steemit/steemsql/rep_2.jpg" alt=""></p>
+<p>可以看到reputation值最高的各位大神们，@sweetssj 赫然也在其中。<br>竟然有rep值超过78的存在！羽西还在为rep 60而努力努力努力。。。</p>
+<p>查看一下Steem中的各位土豪，这里只以账户中的SBD为例，需要注意的是sbd_balance中包含’SBD’字符，需要先去掉，然后再转换为数字才能进行正确排序：</p>
+<p>select top 30 name, sbd_balance<br>from Accounts<br>order by CAST(REPLACE(sbd_balance, ‘SBD’, ‘’) AS FLOAT) desc;</p>
+<p><img src="/images/steemit/steemsql/sbd.jpg" alt=""></p>
+<p>其实帐户表里面有用的信息还是很多的，这个大家自己去深挖吧。。。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在写一些有趣的Steem相关程序。尝试了一下Steemsql，感觉非常好用。就像 @jubi 曾经提到的一样，很多对IT技术不是很熟悉的朋友经常想要查询一些Steem的数据。因此就萌生了写一个教程的想法。这一系列教程主要是针对小白们的，欢迎大神们指正。&lt;/p&gt;
+&lt;h2 
+    
+    </summary>
+    
+      <category term="Steemit" scheme="https://cn.yuxifan.com/categories/Steemit/"/>
+    
+    
+      <category term="Steem" scheme="https://cn.yuxifan.com/tags/Steem/"/>
+    
+      <category term="Steemit" scheme="https://cn.yuxifan.com/tags/Steemit/"/>
+    
+      <category term="Steemsql" scheme="https://cn.yuxifan.com/tags/Steemsql/"/>
+    
+      <category term="account" scheme="https://cn.yuxifan.com/tags/account/"/>
+    
+  </entry>
   
   <entry>
     <title>Python Steem API介绍系列#5 － steempy命令行工具篇</title>
