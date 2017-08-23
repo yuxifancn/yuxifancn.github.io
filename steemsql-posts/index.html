@@ -3,29 +3,41 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Python Steem API介绍系列#1 － 账户篇 | 范羽西博客</title>
+    <title>Steemsql系列教程二：查询发帖信息 | 范羽西博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Python,Steem,Steemit">
+        <meta name="keywords" content="Steem,Steemit,Steemsql,posts">
     
-    <meta name="description" content="在Account这个类中封装了各种账户相关的信息，下面介绍一下如何使用，同时也讨论一下一些重要的指标，比如声望值，投票力等，也许我对用户操作对这些值的影响的理解有偏差，希望各位大佬们多多指点。
-如何使用Account类首先需要配置Python Steem的开发环境，然后只需要导入这个类就可以使用了：
-12from piston.account import Accountaccount = Ac">
+    <meta name="description" content="前面介绍了如何查询帐户相关的信息，接下来看看和用户发帖相关的信息。
+图片来源：Steemsql官网
+查看表结构，看看里面都有什么字段：
+1sp_columns Comments;
+可以看到有很多有用的信息，比如author, title, permlink等等。
+下面查一查我们cn区8月份帖子按照收入排序的前10名，显示它们的收入，获得投票数，作者，文章名，文章地址：
+123456select t">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python Steem API介绍系列#1 － 账户篇">
-<meta property="og:url" content="https://cn.yuxifan.com/python-steemit-api-account-management/index.html">
+<meta property="og:title" content="Steemsql系列教程二：查询发帖信息">
+<meta property="og:url" content="https://cn.yuxifan.com/steemsql-posts/index.html">
 <meta property="og:site_name" content="范羽西博客">
-<meta property="og:description" content="在Account这个类中封装了各种账户相关的信息，下面介绍一下如何使用，同时也讨论一下一些重要的指标，比如声望值，投票力等，也许我对用户操作对这些值的影响的理解有偏差，希望各位大佬们多多指点。
-如何使用Account类首先需要配置Python Steem的开发环境，然后只需要导入这个类就可以使用了：
-12from piston.account import Accountaccount = Ac">
-<meta property="og:image" content="https://cn.yuxifan.com/images/steemit/python/steem-account.png">
-<meta property="og:updated_time" content="2017-08-11T23:01:03.554Z">
+<meta property="og:description" content="前面介绍了如何查询帐户相关的信息，接下来看看和用户发帖相关的信息。
+图片来源：Steemsql官网
+查看表结构，看看里面都有什么字段：
+1sp_columns Comments;
+可以看到有很多有用的信息，比如author, title, permlink等等。
+下面查一查我们cn区8月份帖子按照收入排序的前10名，显示它们的收入，获得投票数，作者，文章名，文章地址：
+123456select t">
+<meta property="og:image" content="https://cn.yuxifan.com/images/steemit/steemsql/steemsql.png">
+<meta property="og:updated_time" content="2017-08-23T23:21:54.345Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python Steem API介绍系列#1 － 账户篇">
-<meta name="twitter:description" content="在Account这个类中封装了各种账户相关的信息，下面介绍一下如何使用，同时也讨论一下一些重要的指标，比如声望值，投票力等，也许我对用户操作对这些值的影响的理解有偏差，希望各位大佬们多多指点。
-如何使用Account类首先需要配置Python Steem的开发环境，然后只需要导入这个类就可以使用了：
-12from piston.account import Accountaccount = Ac">
-<meta name="twitter:image" content="https://cn.yuxifan.com/images/steemit/python/steem-account.png">
+<meta name="twitter:title" content="Steemsql系列教程二：查询发帖信息">
+<meta name="twitter:description" content="前面介绍了如何查询帐户相关的信息，接下来看看和用户发帖相关的信息。
+图片来源：Steemsql官网
+查看表结构，看看里面都有什么字段：
+1sp_columns Comments;
+可以看到有很多有用的信息，比如author, title, permlink等等。
+下面查一查我们cn区8月份帖子按照收入排序的前10名，显示它们的收入，获得投票数，作者，文章名，文章地址：
+123456select t">
+<meta name="twitter:image" content="https://cn.yuxifan.com/images/steemit/steemsql/steemsql.png">
     
 
     
@@ -158,14 +170,14 @@ ga('send', 'pageview');
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-python-steemit-api-account-management" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+                            <article id="post-steemsql-posts" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        Python Steem API介绍系列#1 － 账户篇
+        Steemsql系列教程二：查询发帖信息
         </h1>
     
 
@@ -173,11 +185,11 @@ ga('send', 'pageview');
         
         
             <div class="article-subtitle">
-                <a href="/python-steemit-api-account-management/" class="article-date">
-    <time datetime="2017-07-31T05:40:12.000Z" itemprop="datePublished">2017-07-31</time>
+                <a href="/steemsql-posts/" class="article-date">
+    <time datetime="2017-08-25T05:40:12.000Z" itemprop="datePublished">2017-08-25</time>
 </a>
                 
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Steem/">Steem</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Steemit/">Steemit</a></li></ul>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Steem/">Steem</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Steemit/">Steemit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Steemsql/">Steemsql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/posts/">posts</a></li></ul>
 
             </div>
         
@@ -195,42 +207,21 @@ ga('send', 'pageview');
               </script>
             
 
-            <p><img src="/images/steemit/python/steem-account.png" alt=""></p>
-<p>在Account这个类中封装了各种账户相关的信息，下面介绍一下如何使用，同时也讨论一下一些重要的指标，比如声望值，投票力等，也许我对用户操作对这些值的影响的理解有偏差，希望各位大佬们多多指点。</p>
-<h2 id="如何使用Account类"><a href="#如何使用Account类" class="headerlink" title="如何使用Account类"></a>如何使用Account类</h2><p>首先需要<a href="/cn/@yuxi/ubuntu-16-python-steem">配置Python Steem的开发环境</a>，然后只需要导入这个类就可以使用了：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> piston.account <span class="keyword">import</span> Account</div><div class="line">account = Account(<span class="string">"yuxi"</span>)</div></pre></td></tr></table></figure>
-<p>至于这个类中有什么属性和方法，可以参考它的<a href="https://github.com/xeroc/piston-lib/blob/master/piston/account.py" rel="external nofollow noopener noreferrer" target="_blank">源代码</a></p>
-<h2 id="获取基本账户信息"><a href="#获取基本账户信息" class="headerlink" title="获取基本账户信息"></a>获取基本账户信息</h2><p>接下来就可以查看各种相关的账户信息了，比如：</p>
-<p>获取用户名：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"Name: %s"</span> % account.name)</div></pre></td></tr></table></figure>
-<p>打印用户的profile，比如：用户名，自我介绍等。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"Profile: %s"</span> % account.profile)</div></pre></td></tr></table></figure>
-<p>查看余额:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"Balances: %s"</span> % account.balances)</div></pre></td></tr></table></figure>
-<p>查看用户最近Upvote的帖子：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"Account votes: %s"</span> % account.get_account_votes())</div></pre></td></tr></table></figure>
-<p>这个指标里面有个weight，这个应该是和Steem Power有关的，值最大，投的票就越起作用，作者获得的奖励就越多。看了一下abit大神的投票，这个weight的值大的＊吓＊死＊人＊了＊</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;'weight': 3590608, 'time': '2017-07-28T07:58:42', 'rshares': '35476665753831', 'authorperm': 'deanliu/steem-oh-the-eagle-flies-high', 'percent': 5000&#125;, </div><div class="line">&#123;'weight': 3350775, 'time': '2017-07-28T08:20:09', 'rshares': '17942256119450', 'authorperm': 'lingfei/5r552t', 'percent': 2500&#125;,</div><div class="line"> &#123;'weight': 4038783, 'time': '2017-07-28T11:04:48', 'rshares': '49749730726633', 'authorperm': 'rea/a-queen-for-the-weekend-in-the-scottish-highlands-part-iii', 'percent': 7000&#125;,</div><div class="line"> &#123;'weight': 5215056, 'time': '2017-07-28T12:03:54', 'rshares': '45672133202030', 'authorperm': 'someone/london---travel-with-me-6----susan-6-by-susanlo', 'percent': 6500&#125;</div></pre></td></tr></table></figure>
-<h2 id="关于关注和粉丝"><a href="#关于关注和粉丝" class="headerlink" title="关于关注和粉丝"></a>关于关注和粉丝</h2><p>看看你的粉丝还有你都关注了谁</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">followers = account.get_followers()</div><div class="line">following = account.get_following()</div><div class="line">print(<span class="string">"Followers: %s"</span> % followers)</div><div class="line">print(<span class="string">"Following: %s"</span> % following)</div></pre></td></tr></table></figure>
-<p>还可以利用Python的集合操作看看谁和你互粉了：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"Dual following: %s"</span> % list(set(followers).intersection(set(following))))</div></pre></td></tr></table></figure>
-<h2 id="关于投票力"><a href="#关于投票力" class="headerlink" title="关于投票力"></a>关于投票力</h2><p>显示当前用户的投票力：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"Voting power: %s"</span> % account.voting_power())</div></pre></td></tr></table></figure>
-<p>系统显示出我的投票力是:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Voting power: <span class="number">49.47</span></div></pre></td></tr></table></figure>
-<p>我接着做了一个实验，给一哥@myfirst<a href="https://steemit.com/cn/@myfirst/6qowwz-steemit" rel="external nofollow noopener noreferrer" target="_blank">这个帖子</a>投了一票，结果我的投票力涨了：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Voting power: 62.32</div></pre></td></tr></table></figure>
-<p>一哥的<a href="https://steemit.com/steemit/@myfirst/5byn2r-hi-morning" rel="external nofollow noopener noreferrer" target="_blank">这个帖子</a>写的也不错，再投一票。查看下投票力，竟然降了降了降了，我直接蒙圈了。。。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Voting power: 61.19</div></pre></td></tr></table></figure>
-<p>再给O大神的<a href="https://steemit.com/photography/@oflyhigh/5mgvjb" rel="external nofollow noopener noreferrer" target="_blank">这个帖子</a>投了一票，投票力继续下降。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Voting power: 59.98</div></pre></td></tr></table></figure>
-<p>问题来了：为什么第一次给一哥投票时投票力会涨，随后会一直降？Steem用户在投票的时候需要注意什么？</p>
-<h2 id="关于声望值"><a href="#关于声望值" class="headerlink" title="关于声望值"></a>关于声望值</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"Reputation: %s"</span> % account.rep)</div></pre></td></tr></table></figure>
-<p>这个声望值和你的Steem Power没有关系，和你在Steem中的行为有关，比如：发帖质量，参与讨论等有关。</p>
-<p>先说到这里，欢迎大家批评指正。</p>
-<p><img src="/images/yuxi-steemit.png" alt="Yuxi @ Steemit"></p>
-<p><a href="https://steemit.com" rel="external nofollow noopener noreferrer" target="_blank">https://steemit.com</a> 首发。非常感谢阅读，欢迎FOLLOW和Upvote <a href="https://steemit.com/@yuxi" rel="external nofollow noopener noreferrer" target="_blank">@yuxi</a> 激励我创作更多更好的内容。</p>
+            <p>前面介绍了如何查询帐户相关的信息，接下来看看和用户发帖相关的信息。</p>
+<p><img src="/images/steemit/steemsql/steemsql.png" alt=""><br>图片来源：Steemsql官网</p>
+<p>查看表结构，看看里面都有什么字段：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sp_columns Comments;</div></pre></td></tr></table></figure>
+<p>可以看到有很多有用的信息，比如author, title, permlink等等。</p>
+<p>下面查一查我们cn区8月份帖子按照收入排序的前10名，显示它们的收入，获得投票数，作者，文章名，文章地址：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> top <span class="number">10</span> pending_payout_value+total_payout_value <span class="keyword">as</span> payout, net_votes, author, title, permlink</div><div class="line"><span class="keyword">from</span> Comments </div><div class="line"><span class="keyword">where</span> <span class="keyword">category</span>=<span class="string">'cn'</span> <span class="keyword">AND</span></div><div class="line">created &gt;= <span class="string">'2017-08-01 00:00:00'</span> <span class="keyword">AND</span></div><div class="line">created &lt;= <span class="string">'2017-08-31 23:59:59'</span></div><div class="line"><span class="keyword">order</span> <span class="keyword">by</span> pending_payout_value+total_payout_value <span class="keyword">desc</span>;</div></pre></td></tr></table></figure>
+<p>查询结果如下：<br><img src="/images/steemit/steemsql/02/01.jpg" alt=""></p>
+<p>来看看我们cn区截至到目前为止最高产的作者：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> top <span class="number">10</span> author, <span class="keyword">count</span>(<span class="keyword">ID</span>) <span class="keyword">as</span> posts</div><div class="line"><span class="keyword">from</span> Comments </div><div class="line"><span class="keyword">where</span> parent_permlink=<span class="string">'cn'</span> <span class="keyword">AND</span></div><div class="line">title != <span class="string">''</span> <span class="keyword">AND</span></div><div class="line">created &gt;= <span class="string">'2017-08-01 00:00:00'</span> <span class="keyword">AND</span></div><div class="line">created &lt;= <span class="string">'2017-08-31 23:59:59'</span></div><div class="line"><span class="keyword">group</span> <span class="keyword">by</span> author</div><div class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">count</span>(<span class="keyword">ID</span>) <span class="keyword">desc</span>;</div></pre></td></tr></table></figure></p>
+<p>查询结果如下：<br><img src="/images/steemit/steemsql/02/02.jpg" alt=""></p>
+<p>按月统计一下cn区的文章数量：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">MONTH</span>(created) <span class="keyword">as</span> <span class="keyword">month</span>, <span class="keyword">count</span>(<span class="keyword">ID</span>) <span class="keyword">as</span> posts</div><div class="line"><span class="keyword">from</span> Comments </div><div class="line"><span class="keyword">where</span> parent_permlink=<span class="string">'cn'</span> <span class="keyword">AND</span></div><div class="line">title!=<span class="string">''</span> <span class="keyword">AND</span></div><div class="line">created &gt;= <span class="string">'2017-01-01 00:00:00'</span> <span class="keyword">AND</span></div><div class="line">created &lt;= <span class="string">'2017-08-31 23:59:59'</span></div><div class="line"><span class="keyword">group</span> <span class="keyword">by</span> <span class="keyword">MONTH</span>(created)</div></pre></td></tr></table></figure>
+<p>查询结果如下：<br><img src="/images/steemit/steemsql/02/03.jpg" alt=""></p>
+<p>可以看到，cn区自从6月份开始文章数量激增，这离不开各位Steemit好友的共同努力，加油！</p>
+<p>就先举这几个例子，如果有什么需要查询的欢迎在下面留言，我们一起讨论。</p>
 
 
             
@@ -250,7 +241,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://cn.yuxifan.com/python-steemit-api-account-management/" data-id="cj5s8yxbx0000bcxut2g69np8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://cn.yuxifan.com/steemsql-posts/" data-id="cj6pn9cgy00009txusmcqahx2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -572,7 +563,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'yuxifan';
     
     
-    var disqus_url = 'https://cn.yuxifan.com/python-steemit-api-account-management/';
+    var disqus_url = 'https://cn.yuxifan.com/steemsql-posts/';
     
     (function() {
     var dsq = document.createElement('script');

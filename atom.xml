@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cn.yuxifan.com/"/>
-  <updated>2017-08-23T11:13:45.429Z</updated>
+  <updated>2017-08-23T23:21:54.345Z</updated>
   <id>https://cn.yuxifan.com/</id>
   
   <author>
@@ -14,6 +14,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Steemsql系列教程二：查询发帖信息</title>
+    <link href="https://cn.yuxifan.com/steemsql-posts/"/>
+    <id>https://cn.yuxifan.com/steemsql-posts/</id>
+    <published>2017-08-25T05:40:12.000Z</published>
+    <updated>2017-08-23T23:21:54.345Z</updated>
+    
+    <content type="html"><![CDATA[<p>前面介绍了如何查询帐户相关的信息，接下来看看和用户发帖相关的信息。</p>
+<p><img src="/images/steemit/steemsql/steemsql.png" alt=""><br>图片来源：Steemsql官网</p>
+<p>查看表结构，看看里面都有什么字段：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sp_columns Comments;</div></pre></td></tr></table></figure>
+<p>可以看到有很多有用的信息，比如author, title, permlink等等。</p>
+<p>下面查一查我们cn区8月份帖子按照收入排序的前10名，显示它们的收入，获得投票数，作者，文章名，文章地址：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> top <span class="number">10</span> pending_payout_value+total_payout_value <span class="keyword">as</span> payout, net_votes, author, title, permlink</div><div class="line"><span class="keyword">from</span> Comments </div><div class="line"><span class="keyword">where</span> <span class="keyword">category</span>=<span class="string">'cn'</span> <span class="keyword">AND</span></div><div class="line">created &gt;= <span class="string">'2017-08-01 00:00:00'</span> <span class="keyword">AND</span></div><div class="line">created &lt;= <span class="string">'2017-08-31 23:59:59'</span></div><div class="line"><span class="keyword">order</span> <span class="keyword">by</span> pending_payout_value+total_payout_value <span class="keyword">desc</span>;</div></pre></td></tr></table></figure>
+<p>查询结果如下：<br><img src="/images/steemit/steemsql/02/01.jpg" alt=""></p>
+<p>来看看我们cn区截至到目前为止最高产的作者：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> top <span class="number">10</span> author, <span class="keyword">count</span>(<span class="keyword">ID</span>) <span class="keyword">as</span> posts</div><div class="line"><span class="keyword">from</span> Comments </div><div class="line"><span class="keyword">where</span> parent_permlink=<span class="string">'cn'</span> <span class="keyword">AND</span></div><div class="line">title != <span class="string">''</span> <span class="keyword">AND</span></div><div class="line">created &gt;= <span class="string">'2017-08-01 00:00:00'</span> <span class="keyword">AND</span></div><div class="line">created &lt;= <span class="string">'2017-08-31 23:59:59'</span></div><div class="line"><span class="keyword">group</span> <span class="keyword">by</span> author</div><div class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">count</span>(<span class="keyword">ID</span>) <span class="keyword">desc</span>;</div></pre></td></tr></table></figure></p>
+<p>查询结果如下：<br><img src="/images/steemit/steemsql/02/02.jpg" alt=""></p>
+<p>按月统计一下cn区的文章数量：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">MONTH</span>(created) <span class="keyword">as</span> <span class="keyword">month</span>, <span class="keyword">count</span>(<span class="keyword">ID</span>) <span class="keyword">as</span> posts</div><div class="line"><span class="keyword">from</span> Comments </div><div class="line"><span class="keyword">where</span> parent_permlink=<span class="string">'cn'</span> <span class="keyword">AND</span></div><div class="line">title!=<span class="string">''</span> <span class="keyword">AND</span></div><div class="line">created &gt;= <span class="string">'2017-01-01 00:00:00'</span> <span class="keyword">AND</span></div><div class="line">created &lt;= <span class="string">'2017-08-31 23:59:59'</span></div><div class="line"><span class="keyword">group</span> <span class="keyword">by</span> <span class="keyword">MONTH</span>(created)</div></pre></td></tr></table></figure>
+<p>查询结果如下：<br><img src="/images/steemit/steemsql/02/03.jpg" alt=""></p>
+<p>可以看到，cn区自从6月份开始文章数量激增，这离不开各位Steemit好友的共同努力，加油！</p>
+<p>就先举这几个例子，如果有什么需要查询的欢迎在下面留言，我们一起讨论。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前面介绍了如何查询帐户相关的信息，接下来看看和用户发帖相关的信息。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/steemit/steemsql/steemsql.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;图片来源：Steemsql官网&lt;/p&gt;
+&lt;p&gt;查看表结构，看看里面都有什
+    
+    </summary>
+    
+      <category term="Steemit" scheme="https://cn.yuxifan.com/categories/Steemit/"/>
+    
+    
+      <category term="Steem" scheme="https://cn.yuxifan.com/tags/Steem/"/>
+    
+      <category term="Steemit" scheme="https://cn.yuxifan.com/tags/Steemit/"/>
+    
+      <category term="Steemsql" scheme="https://cn.yuxifan.com/tags/Steemsql/"/>
+    
+      <category term="posts" scheme="https://cn.yuxifan.com/tags/posts/"/>
+    
+  </entry>
   
   <entry>
     <title>Steemsql系列教程一：安装配置+账户篇</title>
