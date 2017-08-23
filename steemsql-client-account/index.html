@@ -19,7 +19,7 @@
 图片来源：Steemsql官网
 安装数据库客户端工具(Install DBeaver)首先需要下载微软的SQL Server JDBC驱动程序">
 <meta property="og:image" content="https://cn.yuxifan.com/images/steemit/steemsql/steemsql.png">
-<meta property="og:updated_time" content="2017-08-23T11:09:04.714Z">
+<meta property="og:updated_time" content="2017-08-23T11:13:45.429Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Steemsql系列教程一：安装配置+账户篇">
 <meta name="twitter:description" content="最近在写一些有趣的Steem相关程序。尝试了一下Steemsql，感觉非常好用。就像 @jubi 曾经提到的一样，很多对IT技术不是很熟悉的朋友经常想要查询一些Steem的数据。因此就萌生了写一个教程的想法。这一系列教程主要是针对小白们的，欢迎大神们指正。
@@ -212,16 +212,16 @@ ga('send', 'pageview');
 <p>运行一个测试的SQL语句：<br>Run a test query:</p>
 <p><img src="/images/steemit/steemsql/07_test.png" alt=""></p>
 <h2 id="查询账户相关信息"><a href="#查询账户相关信息" class="headerlink" title="查询账户相关信息"></a>查询账户相关信息</h2><p>查看表结构，看看里面都有什么数据：</p>
-<p>sp_columns Accounts;</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sp_columns Accounts;</div></pre></td></tr></table></figure>
 <p>看看威望值最高的20个牛人：</p>
-<p>select top 20 name, reputation, post_count, comment_count<br>from Accounts<br>order by reputation desc;</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> top <span class="number">20</span> <span class="keyword">name</span>, reputation, post_count, comment_count </div><div class="line"><span class="keyword">from</span> Accounts</div><div class="line"><span class="keyword">order</span> <span class="keyword">by</span> reputation <span class="keyword">desc</span>;</div></pre></td></tr></table></figure>
 <p><img src="/images/steemit/steemsql/rep_1.jpg" alt=""></p>
 <p>不过这个reputation的值和我们所看到的似乎不太一样，其实这里需要转换一下就OK了：</p>
-<p>select top 20 name, cast(log10(reputation)*9 - 56 as decimal(4,2)) as reputation, post_count, comment_count<br>from Accounts<br>where reputation&gt;0<br>order by reputation desc;</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> top <span class="number">20</span> <span class="keyword">name</span>, <span class="keyword">cast</span>(<span class="keyword">log10</span>(reputation)*<span class="number">9</span> - <span class="number">56</span> <span class="keyword">as</span> <span class="built_in">decimal</span>(<span class="number">4</span>,<span class="number">2</span>)) <span class="keyword">as</span> reputation, post_count, comment_count </div><div class="line"><span class="keyword">from</span> Accounts </div><div class="line"><span class="keyword">where</span> reputation&gt;<span class="number">0</span> </div><div class="line"><span class="keyword">order</span> <span class="keyword">by</span> reputation <span class="keyword">desc</span>;</div></pre></td></tr></table></figure>
 <p><img src="/images/steemit/steemsql/rep_2.jpg" alt=""></p>
 <p>可以看到reputation值最高的各位大神们，@sweetssj 赫然也在其中。<br>竟然有rep值超过78的存在！羽西还在为rep 60而努力努力努力。。。</p>
 <p>查看一下Steem中的各位土豪，这里只以账户中的SBD为例，需要注意的是sbd_balance中包含’SBD’字符，需要先去掉，然后再转换为数字才能进行正确排序：</p>
-<p>select top 30 name, sbd_balance<br>from Accounts<br>order by CAST(REPLACE(sbd_balance, ‘SBD’, ‘’) AS FLOAT) desc;</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> top <span class="number">30</span> <span class="keyword">name</span>, sbd_balance </div><div class="line"><span class="keyword">from</span> Accounts </div><div class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">CAST</span>(<span class="keyword">REPLACE</span>(sbd_balance, <span class="string">'SBD'</span>, <span class="string">''</span>) <span class="keyword">AS</span> <span class="built_in">FLOAT</span>) <span class="keyword">desc</span>;</div></pre></td></tr></table></figure>
 <p><img src="/images/steemit/steemsql/sbd.jpg" alt=""></p>
 <p>其实帐户表里面有用的信息还是很多的，这个大家自己去深挖吧。。。</p>
 
