@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cn.yuxifan.com/"/>
-  <updated>2017-09-06T12:14:02.978Z</updated>
+  <updated>2017-09-06T12:17:29.522Z</updated>
   <id>https://cn.yuxifan.com/</id>
   
   <author>
@@ -16,14 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>Download steemit images and update markdown automatically / 说说Steemit文章的备份：如何自动下载保存文章中的图片并自动更新markdown文本</title>
     <link href="https://cn.yuxifan.com/backup-steemit-posts/"/>
     <id>https://cn.yuxifan.com/backup-steemit-posts/</id>
-    <published>2017-09-06T12:14:02.978Z</published>
-    <updated>2017-09-06T12:14:02.978Z</updated>
+    <published>2017-09-06T21:40:12.000Z</published>
+    <updated>2017-09-06T12:17:29.522Z</updated>
     
-    <content type="html"><![CDATA[<p>Download steemit images and update markdown automatically / 说说Steemit文章的备份：如何自动下载保存文章中的图片并自动更新markdown文本</p>
-<p>Sometimes we want to backup our steemit posts into our own blog/website. It is easy to backup the post text. However, it is a hard work to download all images from steemit to your web server and update image urls in the markdown manually. Here is a script to do the job automatically for you. </p>
+    <content type="html"><![CDATA[<p>Sometimes we want to backup our steemit posts into our own blog/website. It is easy to backup the post text. However, it is a hard work to download all images from steemit to your web server and update image urls in the markdown manually. Here is a script to do the job automatically for you. </p>
 <blockquote>
 <p>相信很多老博主和羽西一样，在Steemit发布了文章后都想把文章在自己博客上做个备份。文章本身是Markdown，很容易备份，只需要复制粘贴就可以了。但文章中的配图都保存在Steem的区块链上，如果想要把图片一个一个的复制到本地，再手工更新备份下来的Markdown文本，工作量就太大了，因此，动手写了这个小程序来做这件工作。</p>
 </blockquote>
@@ -56,11 +55,18 @@
     
     <summary type="html">
     
-      &lt;p&gt;Download steemit images and update markdown automatically / 说说Steemit文章的备份：如何自动下载保存文章中的图片并自动更新markdown文本&lt;/p&gt;
-&lt;p&gt;Sometimes we want to back
+      &lt;p&gt;Sometimes we want to backup our steemit posts into our own blog/website. It is easy to backup the post text. However, it is a hard work t
     
     </summary>
     
+      <category term="Steemit" scheme="https://cn.yuxifan.com/categories/Steemit/"/>
+    
+    
+      <category term="Steem" scheme="https://cn.yuxifan.com/tags/Steem/"/>
+    
+      <category term="Steemit" scheme="https://cn.yuxifan.com/tags/Steemit/"/>
+    
+      <category term="backup" scheme="https://cn.yuxifan.com/tags/backup/"/>
     
   </entry>
   
