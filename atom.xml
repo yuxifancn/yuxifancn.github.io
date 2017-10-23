@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cn.yuxifan.com/"/>
-  <updated>2017-09-06T12:17:29.522Z</updated>
+  <updated>2017-10-23T12:12:28.833Z</updated>
   <id>https://cn.yuxifan.com/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如果在调用Steem API时设定一个执行时限</title>
+    <link href="https://cn.yuxifan.com/set-timeout-while-calling-steem-api/"/>
+    <id>https://cn.yuxifan.com/set-timeout-while-calling-steem-api/</id>
+    <published>2017-10-23T05:40:12.000Z</published>
+    <updated>2017-10-23T12:12:28.833Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在写一些Steem相关的程序，也遇到了一些技术方面的问题。其中一个主要问题就是由于Steem网络的不稳定，导致程序不能按时完成指定的任务。而程序又是设定的cron job，比如：每5分钟就会自动执行一次。那么如果上一次程序因为Steem网络问题没有结束，而下一次的运行又开始了。在极端情况下，就会有很多个进程同时运行，不仅占用更多的系统内存，而且也为Steem区块链网络带来不必要的流量，比如：两个进程如果同时upvote同一篇文章，那么有一个其实做的就是无效工作，但却给区块链网络带来了不必要的负担。下面提供一个简单的办法来解决这个问题。核心点其实就是在调用相应的方法时，设定一个执行时限，到时候如果没有完成的话，就要强制退出。</p>
+<p><img src="/images/steemit/error.jpg" alt=""></p>
+<p>好了，看代码吧：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> signal</div><div class="line"><span class="keyword">import</span> time</div><div class="line"></div><div class="line">timeout_interval = <span class="number">5</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">steem_timeout_handler</span><span class="params">(signum, frame)</span>:</span></div><div class="line">  <span class="keyword">print</span> (<span class="string">"Cannot get response from Steem network!"</span>)</div><div class="line">  <span class="keyword">raise</span> Exception(<span class="string">"Steem network timeout"</span>)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">steem_op</span><span class="params">()</span>:</span></div><div class="line">  <span class="comment"># write your steem code here ...</span></div><div class="line">  <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">print</span> (<span class="string">"."</span>)</div><div class="line">    time.sleep(<span class="number">1</span>)</div><div class="line"></div><div class="line">signal.signal(signal.SIGALRM, steem_timeout_handler)</div><div class="line">signal.alarm(timeout_interval)</div><div class="line"></div><div class="line"><span class="keyword">try</span>:</div><div class="line">  steem_op()</div><div class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> ex:</div><div class="line">  <span class="keyword">print</span> (ex)</div></pre></td></tr></table></figure>
+<p>上面的演示程序并没有真正的调用Steem API，而是用一个循环进行了简单的模拟。运行效果如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ python test.py</div><div class="line">.</div><div class="line">.</div><div class="line">.</div><div class="line">.</div><div class="line">.</div><div class="line">Cannot get response from Steem network!</div><div class="line">Steem network timeout</div></pre></td></tr></table></figure>
+<p>至此，问题已经解决，你所需要的就是设置一个对你的程序来说比较合理的timeout_interval。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在写一些Steem相关的程序，也遇到了一些技术方面的问题。其中一个主要问题就是由于Steem网络的不稳定，导致程序不能按时完成指定的任务。而程序又是设定的cron job，比如：每5分钟就会自动执行一次。那么如果上一次程序因为Steem网络问题没有结束，而下一次的运行又
+    
+    </summary>
+    
+      <category term="Steemit" scheme="https://cn.yuxifan.com/categories/Steemit/"/>
+    
+    
+      <category term="Steem" scheme="https://cn.yuxifan.com/tags/Steem/"/>
+    
+      <category term="Steemit" scheme="https://cn.yuxifan.com/tags/Steemit/"/>
+    
+      <category term="python" scheme="https://cn.yuxifan.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>Download steemit images and update markdown automatically / 说说Steemit文章的备份：如何自动下载保存文章中的图片并自动更新markdown文本</title>
